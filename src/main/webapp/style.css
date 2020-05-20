@@ -61,8 +61,8 @@ header{
     margin-top: 20px;
     display: inline-block;
     color: peru;
-    text-align: center center;
 }
+
 .welcome-text a:hover{
     background: black;
     color: red;
