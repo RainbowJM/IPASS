@@ -16,34 +16,36 @@ header{
     position: relative;
     z-index: 1;
 }
-.navigation{
+.login-container{
     float: right;
     list-style: none;
     margin-top: 30px;
-}
-.navigation li{
-    display: inline-block;
-}
-.navigation li a{
-    color: black;
-    text-decoration: none;
-    padding: 5px 20px;
-    font-family: poppins;
-    font-size: 14px;
-}
-.navigation li a:hover{
-    background: black;
-    color: blueviolet;
 }
 .logo img{
     width: 100px;
     float: left;
 }
+.btn-header-signin{
+    padding: 0.2rem 1rem;
+}
+.btn-header-signin:hover{
+    color: white;
+    background: yellowgreen;
+    padding: 0.2rem 1.0rem;
+}
+.btn-header-signup{
+    padding: 0.2rem 1rem;
+}
+.btn-header-signup:hover{
+    color: white;
+    background: yellowgreen;
+    padding: 0.2rem 1.0rem;
+}
 .welcome-text{
     position: absolute;
     width: 600px;
     height: 250px;
-    margin: 15% 30%;
+    margin: 13% 25%;
 }
 .welcome-text h1{
     text-align: center;
@@ -51,17 +53,13 @@ header{
     text-transform: uppercase;
     font-size: 60px;
 }
-.welcome-text a{
-    border: 1px solid plum;
-    padding: 10px 25px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    margin-top: 20px;
+.welcome-text p{
+    text-align: center;
+    font-size: 30px;
     display: inline-block;
     color: peru;
+    margin: 5% 30%;
 }
-
 .welcome-text a:hover{
     background: black;
     color: red;
@@ -133,7 +131,7 @@ header{
     border: none;
 }
 .copy-right .footer-content .contact-form .contact-input:focus{
-background: purple;
+    background: purple;
 }
 .copy-right .footer-content .contact-form .context-input{
     background: white;
@@ -143,13 +141,13 @@ background: purple;
     padding: .7rem 8rem;
     border: none;
 }
-.btn-big{
-
+.btn-form{
+    padding: 0.3rem 1.2rem;
 }
-.btn:hover{
-    color: white
+.btn-form:hover{
+    color: white;
+    background: yellowgreen;
 }
-
 .copy-right .footer-bottom{
     background: maroon;
     color: black;

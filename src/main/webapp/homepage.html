@@ -10,21 +10,23 @@
         <header>
            <div class="topper">
                <div class="logo">
-                   <!-- Missing logo -->
                    <img src="Vona Creations Logo T.png" alt="Vona's Creation logo"/>
                </div>
-               <ul class="navigation">
-                   <li><a href="#" class="current">Home</a></li>
-                   <li><a href="#">Services</a></li>
-                   <li><a href="">About us</a></li>
-                   <li><a href="">Contact us</a></li>
-               </ul>
+               <div class="login-container">
+                   <form>
+                       <label class="lab email">Email </label>
+                       <input type="text" placeholder="Email" name="username">
+                       <label class="lab psw">Password</label>
+                       <input type="text" placeholder="Password" name="password">
+                       <button class="btn-header-signin" type="submit" href="#">Login</button>
+                       <button class="btn-header-signup" type="submit" href="#">Sign up</button>
+                   </form>
+               </div>
            </div>
            <div class="welcome-text">
                <!-- wrap, style, wild it ... repeat -->
-               <h1>wrap, style & wild it out <br/>repeat</h1>
-               <a class="log-in" href="#">Sign in</a>
-               <a class="enroll" href="#">Sign up</a>
+               <h1>wrap, style <br/>&<br/> wild it out <br/>repeat</h1>
+               <p>Make your appointment now...</p>
            </div>
         </header>
         <!-- footer -->
@@ -33,15 +35,18 @@
                 <div class="section about">
                     <h1 class="logo-text">Vona's Creation</h1>
                     <p>
-                        Vona’s Creation opens its doors for you, our client.<br/>
-                        We are ready to do your hair & give you hair advise.<br/>                     </p>
+                        Vona’s Creation opens its doors for you, our client.
+                        <br/>
+                        We are ready to do your hair & give you hair advise.
+                        <br/>                     
+                    </p>
                     <div class="contact-information">
                         <span><i class="fas fa-phone"></i> &nbsp; 31 6 03 84 84 67</span>
                         <span><i class="fas fa-envelope"></i>&nbsp; info@vonacreation.com</span>
                     </div>
                     <div class="socials">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="http://facebook.com/vona.creation/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/vona.creation/"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="section links">
@@ -49,7 +54,7 @@
                     <br/>
                     <ul>
                         <a href="#"><li>Services</li></a>
-                        <a href="#"><li>Gallery</li></a>
+                        <a href="https://www.instagram.com/vona.creation/"><li>Gallery</li></a>
                         <a href="#"><li>Terms and Conditions</li></a>
                     </ul>
                 </div>
@@ -59,7 +64,7 @@
                     <form action="index.html" method="POST">
                         <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
                         <textarea name="message" class="text-input context-input" placeholder="Your message..."></textarea>
-                        <button type="submit" class="btn btn-big">
+                        <button type="submit" class="btn-footer btn-form">
                             <i class="fas fa-envelope">Send</i>
                         </button>
                     </form>
