@@ -30,7 +30,7 @@ header{
 }
 .btn-header-signin:hover{
     color: white;
-    background: yellowgreen;
+    background: rgb(228, 164, 113);
     padding: 0.2rem 1.0rem;
 }
 .btn-header-signup{
@@ -38,7 +38,7 @@ header{
 }
 .btn-header-signup:hover{
     color: white;
-    background: yellowgreen;
+    background: rgb(228, 164, 113);
     padding: 0.2rem 1.0rem;
 }
 .welcome-text{
@@ -49,7 +49,7 @@ header{
 }
 .welcome-text h1{
     text-align: center;
-    color: blueviolet;
+    color: black;
     text-transform: uppercase;
     font-size: 60px;
 }
@@ -57,21 +57,17 @@ header{
     text-align: center;
     font-size: 30px;
     display: inline-block;
-    color: peru;
+    color: black;
     margin: 5% 30%;
-}
-.welcome-text a:hover{
-    background: black;
-    color: red;
 }
 .copy-right{
     position: relative;
     height: 400px;
-    background: lightseagreen;
+    background: rgb(228, 164, 113);
     color: white;
 }
 .copy-right .footer-content{
-    border: 1px solid red;
+    border: 1px solid;
     height: 350px;
     display: flex;
 }
@@ -87,31 +83,41 @@ header{
 .copy-right .footer-content .about p{
     font-size: 1.3em;
     margin: 8px;
+    color: black;
 }
 .copy-right .footer-content .about .contact-information span{
     display: block;
     font-size: 1.2em;
     margin: 8px;
+    color: black;
 }
 .copy-right .footer-content .about .socials a{
     font-size: 2.5em;
     text-decoration: none;
-    color:white;
+    color: black;
     margin: 8px;
 }
 .copy-right .footer-content .about .socials a:hover{
-    color: black;
+    color: white;
     transition: all .3s;
 }
-.copy-right .footer-content .links ul a{
+.copy-right .footer-content .links ul li{ 
+    color: black;
+}
+.copy-right .footer-content .links ul li a{ 
     display: block;
     text-decoration: none;
     font-size: 1.3em;
     margin-bottom: 10px;
     transition: all .3s;
-    color: white;
+    color: black;
 }
-.copy-right .footer-content .links ul a:hover{
+.copy-right .footer-content .links ul li a:hover{
+    color: white;
+    margin-left: 15px;
+    transition: all .3s;
+}
+.copy-right .footer-content .links ul li:hover{
     color: white;
     margin-left: 15px;
     transition: all .3s;
@@ -134,13 +140,14 @@ header{
 }
 .btn-form{
     padding: 0.3rem 1.2rem;
+    background: white;
 }
 .btn-form:hover{
     color: white;
-    background: yellowgreen;
+    background: rgb(228, 164, 113);
 }
 .copy-right .footer-bottom{
-    background: maroon;
+    background: white;
     color: black;
     height: 50px;
     width: 100%;

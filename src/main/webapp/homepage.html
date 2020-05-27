@@ -16,9 +16,9 @@
                <div class="login-container">
                    <form>
                        <label for="username"class="lab email">Email </label>
-                       <input type="text" placeholder="Email" name="username">
+                       <input type="text" placeholder="Email" id="username">
                        <label for="password" class="lab psw">Password</label>
-                       <input type="text" placeholder="Password" name="password">
+                       <input type="text" placeholder="Password" id="password">
                        <button class="btn-header-signin" type="submit" href="#">Login</button>
                        <button class="btn-header-signup" type="submit" href="signup.html">Sign up</button>
                    </form>
@@ -54,20 +54,22 @@
                     <h2>Quick Links</h2>
                     <br/>
                     <ul>
-                        <a href="#"><li>Services</li></a>
-                        <a href="https://www.instagram.com/vona.creation/"><li>Gallery</li></a>
-                        <a href="#"><li>Terms and Conditions</li></a>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="https://www.instagram.com/vona.creation/">Gallery</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
                     </ul>
                 </div>
                 <div class="section contact-form">
                     <h2>Contact Us</h2>
                     <br/>
-                    <form action="index.html" method="POST">
-                        <input type="email" name="email" class="text-input contact-input" placeholder="Your email address...">
-                        <textarea name="message" class="text-input context-input" placeholder="Your message..."></textarea>
-                        <button type="submit" class="btn-footer btn-form">
-                            <i class="fas fa-envelope">Send</i>
-                        </button>
+                    <form for="contact" action="index.html" method="POST">
+                        <label for="email">
+                        <input type="email" id="email" class="text-input contact-input" placeholder="Your email address...">
+                        </label>
+                        <label for="message">
+                        <textarea id="message" class="text-input context-input" placeholder="Your message..."></textarea>
+                        </label>
+                        <button id="contact" type="submit" class="btn-footer btn-form">Send</button>
                     </form>
                 </div>
             </div>

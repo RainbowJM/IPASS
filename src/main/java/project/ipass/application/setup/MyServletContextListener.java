@@ -1,4 +1,4 @@
-package project.ipass.setup;
+package project.ipass.application.setup;
 
 public class MyServletContextListener {
 }
