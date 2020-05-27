@@ -37,6 +37,10 @@ public class MyUser implements Principal {
     }
 
     public static String validateLogin(String username, String password){
+        MyUser found = getUserByName(username);
+        if (found!=null){
+            return password.equals(found.plainpassword) ? found.getRole() : null;
+        }
         return null;
     }
 }
