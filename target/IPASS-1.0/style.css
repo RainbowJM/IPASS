@@ -1,0 +1,160 @@
+*{
+   margin: 0;
+   padding: 0;
+}
+.topper{
+    width: 1170px;
+    margin: auto;
+}
+header{
+    background: url(2705031.jpg);
+    background-attachment: fixed;
+    height: 100vh;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+}
+.login-container{
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+}
+.logo img{
+    width: 100px;
+    float: left;
+}
+.btn-header-signin{
+    padding: 0.2rem 1rem;
+}
+.btn-header-signin:hover{
+    color: white;
+    background: rgb(228, 164, 113);
+    padding: 0.2rem 1.0rem;
+}
+.btn-header-signup{
+    padding: 0.2rem 1rem;
+}
+.btn-header-signup:hover{
+    color: white;
+    background: rgb(228, 164, 113);
+    padding: 0.2rem 1.0rem;
+}
+.welcome-text{
+    position: absolute;
+    width: 600px;
+    height: 250px;
+    margin: 13% 25%;
+}
+.welcome-text h1{
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
+    font-size: 60px;
+}
+.welcome-text p{
+    text-align: center;
+    font-size: 30px;
+    display: inline-block;
+    color: black;
+    margin: 5% 30%;
+}
+.copy-right{
+    position: relative;
+    height: 400px;
+    background: rgb(228, 164, 113);
+    color: white;
+}
+.copy-right .footer-content{
+    border: 1px solid;
+    height: 350px;
+    display: flex;
+}
+.copy-right .footer-content .section{
+    flex: 1;
+    padding: 25px;
+    border: 1px solid white;
+}
+.copy-right .footer-content h1,
+.copy-right .footer-content h2{
+    color: black;
+}
+.copy-right .footer-content .about p{
+    font-size: 1.3em;
+    margin: 8px;
+    color: black;
+}
+.copy-right .footer-content .about .contact-information span{
+    display: block;
+    font-size: 1.2em;
+    margin: 8px;
+    color: black;
+}
+.copy-right .footer-content .about .socials a{
+    font-size: 2.5em;
+    text-decoration: none;
+    color: black;
+    margin: 8px;
+}
+.copy-right .footer-content .about .socials a:hover{
+    color: white;
+    transition: all .3s;
+}
+.copy-right .footer-content .links ul li{ 
+    color: black;
+}
+.copy-right .footer-content .links ul li a{ 
+    display: block;
+    text-decoration: none;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    transition: all .3s;
+    color: black;
+}
+.copy-right .footer-content .links ul li a:hover{
+    color: white;
+    margin-left: 15px;
+    transition: all .3s;
+}
+.copy-right .footer-content .links ul li:hover{
+    color: white;
+    margin-left: 15px;
+    transition: all .3s;
+}
+.copy-right .footer-content .contact-form .contact-input{
+    background: white;
+    color: black;
+    margin-bottom: 10px;
+    line-height: 1.5rem;
+    padding: .7rem 8rem;
+    border: none;
+}
+.copy-right .footer-content .contact-form .context-input{
+    background: white;
+    color: black;
+    margin-bottom: 10px;
+    line-height: 1.5rem;
+    padding: .7rem 8rem;
+    border: none;
+}
+.btn-form{
+    padding: 0.3rem 1.2rem;
+    background: white;
+}
+.btn-form:hover{
+    color: white;
+    background: rgb(228, 164, 113);
+}
+.copy-right .footer-bottom{
+    background: white;
+    color: black;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-top: 20px;
+    font-size: 1.1em;
+}
