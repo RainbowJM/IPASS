@@ -35,4 +35,8 @@ public class MyUser implements Principal {
                 .findFirst() // dan wil ik dat je het vind
                 .orElse(null); //anders return null
     }
+
+    public static String validateLogin(String username, String password){
+        return null;
+    }
 }
