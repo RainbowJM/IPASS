@@ -1,22 +1,27 @@
 package project.ipass.application.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Appointment {
+public class Appointment{
+    private List<Service> allServices= new ArrayList<>();
+    private List<Worker> allWorkers = new ArrayList<>();
+    private List<Client> allClient = new ArrayList<>();
     private int appointmentId;
-    private Date date;
+    private LocalDate date;
     private int period;
     private Service service;
     private Worker worker;
     private Client client;
 
-    public Appointment(int appointmentId, Date date, int period){
+    public Appointment(int appointmentId, LocalDate date, int period){
         this.appointmentId = appointmentId;
         this.date = date;
         this.period = period;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -50,5 +55,9 @@ public class Appointment {
 
     public void setWorker(Worker worker) {
         this.worker = worker;
+    }
+
+    public void addAppointment(LocalDate date, String serviceName,int serviceId, String firstName){
+
     }
 }
