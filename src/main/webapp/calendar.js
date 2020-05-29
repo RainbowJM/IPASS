@@ -5,21 +5,28 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 
 let monthAndYear = document.getElementById("month-and-year");
 
-showCalendar(currentMonth, currentYear);
+const card = document.querySelector("#application");
 
-function showCalendar(month, year){
+const isWeekend = day =>{
+    //0 when it's sunday, 6 when it's saturday
+    return day % 7 === 0 || day % 7 === 6;
+}
+
+showCurrentMonthYear(currentMonth, currentYear);
+monthYearInText();
+
+function showCurrentMonthYear(month, year){
     let firstDay = new Date(year, month).getDay();
-    let daysInMonth = 32 - new Date(year, month, 32).getDate;
+    let daysInMonth = 32 - (new Date(year, month, 32)).getDate();
 
-    let tbl = document.getElementById("calendar-body");
-    tbl.innerHTML= "";
-
-    monthAndYear.innerHTML = months[month] + " " + year;
+    card.innerHTML= "";
 
     let date = 1
 
+    // i is row
     for(let i = 0; i < 6; i++){
-        let row = document.createElement("tr");
+        
+
         for(let j = 0; j < 7; j++){
             if(i === 0 && j< firstDay){
                 let cell = document.createElement("td")
@@ -36,18 +43,34 @@ function showCalendar(month, year){
             }
             date++;
         }
-        tbl.appendChild(row);
+        table.appendChild(row);
     }
+}
+function monthYearInText(){
+    let monthYearText = document.createTextNode(months[currentMonth] + " "+ currentYear);
+    monthAndYear.innerHTML = " ";
+    monthAndYear.appendChild(monthYearText);
 }
 
 function previous(){
     currentYear = currentMonth === 0 ? currentYear  - 1: currentYear;
     currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
-    showCalendar(currentMonth, currentYear);
+    showCurrentMonthYear(currentMonth, currentYear);
+    monthYearInText();
+
 }
 
 function next(){
     currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
     currentMonth = (currentMonth + 1) % 12;
-    showCalendar(currentMonth, currentYear);
+    showCurrentMonthYear(currentMonth, currentYear);
+    monthYearInText();
+}
+
+function today(){
+    today = new Date();
+    currentMonth = today.getMonth();
+    currentYear = today.getFullYear();
+    showCurrentMonthYear(currentMonth, currentYear);
+    monthYearInText();
 }
