@@ -5,7 +5,7 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 
 let monthAndYear = document.getElementById("month-and-year");
 
-const card = document.querySelector("#application");
+const calendar = document.querySelector("#application");
 
 const isWeekend = day =>{
     //0 when it's sunday, 6 when it's saturday
@@ -16,36 +16,46 @@ showCurrentMonthYear(currentMonth, currentYear);
 monthYearInText();
 
 function showCurrentMonthYear(month, year){
-    let firstDay = new Date(year, month).getDay();
+    let firstDay = new Date(year, month);
     let daysInMonth = 32 - (new Date(year, month, 32)).getDate();
 
-    card.innerHTML= "";
+    calendar.innerHTML = "";
 
-    let date = 1
+    let date = 1;
+    let getFirstDayOfTheMonth = new Date(firstDay.getFullYear(), firstDay.getMonth(), 0).getDay();
 
-    // i is row
     for(let i = 0; i < 6; i++){
-        
 
         for(let j = 0; j < 7; j++){
-            if(i === 0 && j< firstDay){
-                let cell = document.createElement("td")
-                let cellText = document.createTextNode("");
-                cell.appendChild(cellText);
-                row.appendChild(cell);
-            } else if(date> daysInMonth){
-                break;
+            const weekend = isWeekend(date);
+            let out = "";
+
+            if((i === 0 && j < getFirstDayOfTheMonth )|| date > daysInMonth){
+                out = `<div class="day color"></div>`;
+                // let newDiv = document.createElement("div");
+                // newDiv.className = "day color";
+                // newDiv.appendChild(out);
             }else{
-                let cell = document.createElement("td")
-                let cellText = document.createTextNode(date);
-                cell.appendChild(cellText);
-                row.appendChild(cell);
+                out = `<a href="#"><div class="day ${weekend? "weekend" : ""}">${date}</div></a>`;
+                // let newDiv = document.createElement("div");
+                // newDiv.className = "day";
+                // let newContent = document.createTextNode(date);
+                date++;              
             }
-            date++;
+            calendar.insertAdjacentHTML("beforeend",out);            
         }
-        table.appendChild(row);
     }
+
+document.querySelectorAll("#application .day").forEach(
+        day =>{
+            day.addEventListener("click", event =>{
+                console.log(event.currentTarget)
+                event.currentTarget.classList.toggle("selected");
+            })
+        }
+    )
 }
+
 function monthYearInText(){
     let monthYearText = document.createTextNode(months[currentMonth] + " "+ currentYear);
     monthAndYear.innerHTML = " ";
@@ -67,7 +77,7 @@ function next(){
     monthYearInText();
 }
 
-function today(){
+function dayToday(){
     today = new Date();
     currentMonth = today.getMonth();
     currentYear = today.getFullYear();
