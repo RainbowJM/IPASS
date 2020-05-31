@@ -8,7 +8,7 @@ import java.util.List;
 public class User implements Principal {
     private static List<User> allUsers = new ArrayList<>();
     private static int userId = 0;
-    private static String firstName;
+    private String firstName;
     private String lastName;
     private String username;
     private String plainpassword;
@@ -28,6 +28,7 @@ public class User implements Principal {
         }
 
     }
+
     public void setAdmin(){
         role = "admin";
     }

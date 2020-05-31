@@ -18,7 +18,17 @@ function signin(event){
     let formData = new FormData(document.querySelector("loginForm"));
     let encData = new URLSearchParams(formData.entries());
 
+    fetch("rest/authentication", {method: 'POST', body: encData})
+        .then(function (response) {
+            if(response.ok) return response.json();
+            else throw "Wrong username/password";
+        })
+        .then(myJson => window.sessionStorage.setItem("myJWT", myJson.JWT))
+        .catch(error => console.log(error));
+
 }
+
+document.querySelector("#login").addEventListener("click", login);
 
 function signout(){
     localStorage.removeItem("username");
