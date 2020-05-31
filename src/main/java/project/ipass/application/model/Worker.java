@@ -7,9 +7,10 @@ public final class Worker extends User {
     private List<Appointment> appointments = new ArrayList<>();
     private Availability availability;
 
-    public Worker(int userId, String firstName, String lastName, String username, String password) {
-        super(userId, firstName, lastName, username, password);
+    public Worker(String firstName, String lastName, String username, String password) {
+        super(firstName, lastName, username, password);
     }
+
 
     public List<Appointment> getAppointments() {
         return appointments;

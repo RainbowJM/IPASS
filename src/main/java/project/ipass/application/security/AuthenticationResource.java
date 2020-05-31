@@ -4,6 +4,7 @@ import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.impl.crypto.MacProvider;
+import project.ipass.application.model.User;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -35,7 +36,7 @@ public class AuthenticationResource {
     public Response authenticateUser(@FormParam("username") String username,
                                      @FormParam("password") String password){
         try{
-            String role = MyUser.validateLogin(username, password);
+            String role = User.validateLogin(username, password);
 
             if(role == null){
                 throw new IllegalArgumentException("No user found");

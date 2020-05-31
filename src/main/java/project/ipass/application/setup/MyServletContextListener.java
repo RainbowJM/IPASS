@@ -1,7 +1,7 @@
 package project.ipass.application.setup;
 
 import project.ipass.application.model.Service;
-import project.ipass.application.security.MyUser;
+import project.ipass.application.model.User;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -13,10 +13,10 @@ public class MyServletContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("initializing application");
-        new MyUser("Isobel", "UJ633");
-        new MyUser("Tymon","yZC1H");
-        new MyUser("Makenzie","1bMCg");
-        new MyUser("Jevona", "test1").setAdmin();
+        new User("Isobel", "Hook", "Iso@hotmail.com","test3");
+        new User("Tymon", "Bird", "ty@hotmail.com","test2");
+        new User("Makenzie", "Castro","castro@hotmail.com","test1");
+        new User("Jevona", "Magdalena", "jmag@hotmial.com", "test").setAdmin();
 
         // service
         new Service(1,"Small Boxbraid",8);

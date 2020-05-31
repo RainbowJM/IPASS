@@ -1,13 +1,15 @@
 package project.ipass.application.security;
 
+import project.ipass.application.model.User;
+
 import javax.ws.rs.core.SecurityContext;
 import java.security.Principal;
 
 public class MySecurityContext implements SecurityContext {
-    private MyUser user;
+    private User user;
     private String scheme;
 
-    public MySecurityContext(MyUser user, String scheme){
+    public MySecurityContext(User user, String scheme){
         this.user = user;
         this.scheme = scheme;
     }
