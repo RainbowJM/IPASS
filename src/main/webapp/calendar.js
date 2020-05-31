@@ -5,7 +5,7 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 
 let monthAndYear = document.getElementById("month-and-year");
 
-const calendar = document.querySelector("#application");
+const CALENDAR = document.querySelector("#application");
 
 const isWeekend = day =>{
     //0 when it's sunday, 6 when it's saturday
@@ -19,7 +19,7 @@ function showCurrentMonthYear(month, year){
     let firstDay = new Date(year, month);
     let daysInMonth = 32 - (new Date(year, month, 32)).getDate();
 
-    calendar.innerHTML = "";
+    CALENDAR.innerHTML = "";
 
     let date = 1;
     let getFirstDayOfTheMonth = new Date(firstDay.getFullYear(), firstDay.getMonth(), 0).getDay();
@@ -42,7 +42,7 @@ function showCurrentMonthYear(month, year){
                 // let newContent = document.createTextNode(date);
                 date++;              
             }
-            calendar.insertAdjacentHTML("beforeend",out);            
+            CALENDAR.insertAdjacentHTML("beforeend",out);            
         }
     }
 

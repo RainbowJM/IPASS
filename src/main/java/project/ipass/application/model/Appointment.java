@@ -15,7 +15,7 @@ public class Appointment{
     private Worker worker;
     private Client client;
 
-    public Appointment(LocalDate date, int period{
+    public Appointment(LocalDate date, int period){
         appointmentId = appointmentId++;
         this.date = date;
         this.period = period;

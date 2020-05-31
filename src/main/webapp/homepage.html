@@ -14,13 +14,13 @@
                    <img src="Vona Creations Logo T.png" alt="Vona's Creation logo"/>
                </div>
                <div class="login-container">
-                   <form>
+                   <form onsubmit= "return validateLogin()" action="calendar.html" id="loginForm">
                        <label for="username"class="lab email">Email </label>
                        <input type="text" placeholder="Email" id="username">
                        <label for="password" class="lab psw">Password</label>
-                       <input type="text" placeholder="Password" id="password">
-                       <button class="btn-header-signin" type="submit" href="#">Login</button>
-                       <button class="btn-header-signup" type="submit" href="signup.html">Sign up</button>
+                       <input type="text" placeholder="Password" id="password" >
+                       <button class="btn-header-signin" type="submit" >Login</button>
+                       <!-- <button class="btn-header-signup" type="submit" href="signup.html">Sign up</button> -->
                    </form>
                </div>
            </div>
@@ -78,7 +78,6 @@
             </div>
         </footer>
     </body>
-    <script src="https://kit.fontawesome.com/855a9b5d08.js" crossorigin="anonymous">
-    </script>
-
+    <script src="https://kit.fontawesome.com/855a9b5d08.js" crossorigin="anonymous"></script>
+    <script src="homepage.js"></script>
 </html>

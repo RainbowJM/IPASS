@@ -39,6 +39,10 @@ nav ul li a {
     text-decoration: none;
     font-size: 22px;
 }
+
+nav ul li a .text{
+    margin-top: 30px;
+}
   
 li a:hover {
     color: white;
@@ -58,9 +62,9 @@ li a:hover {
     margin: 15px;
 }
   
-#card input[type="button"] {
+/* #card input[type="button"] {
     width: auto;
-}
+} */
   
 #days {
     display: grid;
@@ -100,7 +104,7 @@ li a:hover {
 }
   
 .day:hover {
-    background-color:rgb(245, 148, 69);;
+    background-color:rgb(245, 148, 69);
     color: black;
 }
   
@@ -108,15 +112,15 @@ li a:hover {
     background-color:rgb(240, 191, 151);
 }
   
-  /* .selected {
-    background-color: rgb(130, 159, 175);
+  .selected {
+    background-color:rgb(238, 115, 15);
     color: white;
-  } */
+  }
   
 .cardButtons {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    top: 70%;
     transform: translateY(-50%);
     border: 2px solid black;
 }
@@ -126,82 +130,8 @@ li a:hover {
     border-top: 0px;
 }
   
-  
-.copy-right{
-    position: relative;
-    height: 350px;
+.copy-right .footer-bottom{
     background: rgb(228, 164, 113);
-    color: white;
-}
-.copy-right .footer-content{
-      border: 1px solid;
-      height: 350px;
-      display: flex;
-}
-.copy-right .footer-content .section{
-      flex: 1;
-      padding: 25px;
-      border: 1px solid white;
-      text-align: center;
-}
-  .copy-right .footer-content h1,
-  .copy-right .footer-content h2{
-      color: black;
-  }
-  .copy-right .footer-content .about p{
-      font-size: 1.3em;
-      margin: 8px;
-      color: black;
-  }
-  .copy-right .footer-content .about .contact-information span{
-      display: block;
-      font-size: 1.2em;
-      margin: 8px;
-      color: black;
-  }
-  .copy-right .footer-content .about .socials a{
-      font-size: 2.5em;
-      text-decoration: none;
-      color: black;
-      margin: 8px;
-      text-align: center;
-  
-  }
-  .copy-right .footer-content .about .socials a:hover{
-      color: white;
-      transition: all .3s;
-      text-align: center;
-  
-  }
-  .copy-right .footer-content .links ul li{ 
-      color: black;
-      text-align: center;
-  }
-  .copy-right .footer-content .links ul li a{ 
-      display: block;
-      text-decoration: none;
-      font-size: 1.3em;
-      margin-bottom: 10px;
-      transition: all .3s;
-      color: black;
-      text-align: center;
-  }
-  .copy-right .footer-content .links ul li a:hover{
-      color: white;
-      margin-left: 15px;
-      transition: all .3s;
-      text-align: center;
-  
-  }
-  .copy-right .footer-content .links ul li:hover{
-    color: white;
-    margin-left: 15px;
-    transition: all .3s;
-    text-align: center;
-  
-  }
-  .copy-right .footer-bottom{
-    background: white;
     color: black;
     height: 50px;
     width: 100%;
