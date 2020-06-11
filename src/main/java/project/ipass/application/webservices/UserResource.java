@@ -18,11 +18,10 @@ public class UserResource {
                                @FormParam("password") String pwd ){
         for (User user : User.getAllUsers()){
             if (user.getFirstName().equals(fname)){
-                return Response.status(Response.Status.CONFLICT)
-                        .entity(new AbstractMap
-                                .SimpleEntry<String, String>("error", "User already exists"))
-                .build();
-
+                return Response
+                        .status(Response.Status.CONFLICT)
+                        .entity(new AbstractMap.SimpleEntry<String, String>("error", "User already exists"))
+                        .build();
             }
         }
         return Response.ok(new User(fname,lname, username, pwd)).build();

@@ -55,7 +55,7 @@ header{
 }
 .welcome-text p{
     text-align: center;
-    font-size: 30px;
+    font-size: 1.5em;
     display: inline-block;
     color: black;
     margin: 5% 30%;
