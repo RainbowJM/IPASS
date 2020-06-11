@@ -23,7 +23,7 @@ public class Appointment{
             allAppointments.add(this);
         }
     }
-    
+
 
     // getters
     public static List<Appointment> getAllAppointments(){
