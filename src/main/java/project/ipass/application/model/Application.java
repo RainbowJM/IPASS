@@ -14,4 +14,7 @@ public class Application implements Serializable {
     public List<Appointment> getAllAppointments(){
         return Collections.unmodifiableList(Appointment.getAllAppointments());
     }
+    public List<User> getAllUsers(){
+        return Collections.unmodifiableList(User.getAllUsers());
+    }
 }

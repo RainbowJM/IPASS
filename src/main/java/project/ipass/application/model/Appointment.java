@@ -23,7 +23,9 @@ public class Appointment{
             allAppointments.add(this);
         }
     }
+    
 
+    // getters
     public static List<Appointment> getAllAppointments(){
         return Collections.unmodifiableList(allAppointments);
     }
@@ -48,6 +50,7 @@ public class Appointment{
         return worker;
     }
 
+    // setters
     public void setClient(Client client) {
         this.client = client;
     }

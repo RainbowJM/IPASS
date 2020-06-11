@@ -3,6 +3,7 @@ package project.ipass.application.model;
 
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class User implements Principal {
@@ -54,6 +55,9 @@ public class User implements Principal {
             return password.equals(found.plainpassword) ? found.getRole() : null;
         }
         return null;
+    }
+    public static List<User> getAllUsers(){
+        return Collections.unmodifiableList(allUsers);
     }
 
     public int getUserId() {
