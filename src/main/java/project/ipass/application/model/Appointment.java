@@ -9,21 +9,39 @@ public class Appointment{
     private static List<Appointment> allAppointments = new ArrayList<>();
     private static int appointmentId = 0;
     private LocalDate date;
-    private int period;
+    private int hour;
     private Service service;
     private Worker worker;
     private Client client;
 
-    public Appointment(LocalDate date, int period,Service serviceName, Client cName, Worker wName){
+    public Appointment(LocalDate date, int hour, String serviceName, String cName, String wName){
         appointmentId = appointmentId++;
         this.date = date;
-        this.period = period;
+        this.hour = hour;
+        serviceName = getService().getServiceName();
+        cName = getClient().getName();
+        wName = getWorker().getName();
 
         if (!allAppointments.contains(this)){
             allAppointments.add(this);
         }
     }
 
+    // calendarArray [2004][12][25][13][20] = appA
+    public void addAppointment(LocalDate date, int hour, String serviceName, String cName, String wName){
+        serviceName = getService().getServiceName();
+        cName = getClient().getName();
+        wName = getWorker().getName();
+        for (Appointment appointment : allAppointments){
+            if (date == appointment.getDate()){
+                if (hour == appointment.getHour()){
+                    break;
+                }else{
+                    allAppointments.add(new Appointment(date, hour, serviceName, cName, wName));
+                }
+            }
+        }
+    }
 
     // getters
     public static List<Appointment> getAllAppointments(){
@@ -34,8 +52,8 @@ public class Appointment{
         return date;
     }
 
-    public int getPeriod() {
-        return period;
+    public int getHour() {
+        return hour;
     }
 
     public Client getClient() {
