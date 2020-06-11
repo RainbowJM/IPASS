@@ -7,7 +7,8 @@ import java.util.List;
 
 public class Appointment{
     private static List<Appointment> allAppointments = new ArrayList<>();
-    private static int appointmentId = 0;
+    private int appointmentId;
+    private static int numAppointment = 0;
     private LocalDate date;
     private int hour;
     private Service service;
@@ -15,7 +16,20 @@ public class Appointment{
     private Client client;
 
     public Appointment(LocalDate date, int hour, String serviceName, String cName, String wName){
-        appointmentId = appointmentId++;
+        appointmentId = numAppointment++;
+        this.date = date;
+        this.hour = hour;
+        serviceName = getService().getServiceName();
+        cName = getClient().getName();
+        wName = getWorker().getName();
+
+        if (!allAppointments.contains(this)){
+            allAppointments.add(this);
+        }
+    }
+
+    public Appointment(int id, LocalDate date, int hour, String serviceName, String cName, String wName){
+        this.appointmentId = id;
         this.date = date;
         this.hour = hour;
         serviceName = getService().getServiceName();
@@ -43,6 +57,16 @@ public class Appointment{
         }
     }
 
+    public static  boolean removeAppointment(int id){
+        for (Appointment appoint : allAppointments){
+            if (appoint.getAppointmentId() == id){
+                return allAppointments.remove(appoint);
+            }
+        }
+        return false;
+    }
+
+
     // getters
     public static List<Appointment> getAllAppointments(){
         return Collections.unmodifiableList(allAppointments);
@@ -54,6 +78,10 @@ public class Appointment{
 
     public int getHour() {
         return hour;
+    }
+
+    public int getAppointmentId() {
+        return appointmentId;
     }
 
     public Client getClient() {
@@ -69,6 +97,9 @@ public class Appointment{
     }
 
     // setters
+    public void setAppointmentId(int appointmentId) {
+        this.appointmentId = appointmentId;
+    }
     public void setClient(Client client) {
         this.client = client;
     }
