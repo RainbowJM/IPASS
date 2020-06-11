@@ -7,7 +7,9 @@ let monthAndYear = document.getElementById("month-and-year");
 
 const CALENDAR = document.querySelector("#application");
 
-const isWeekend = day =>{
+const SETDATE = document.getElementById("selectDay");
+
+const ISWEEKEND = day =>{
     //0 when it's sunday, 6 when it's saturday
     return day % 7 === 0 || day % 7 === 6;
 }
@@ -27,7 +29,7 @@ function showCurrentMonthYear(month, year){
     for(let i = 0; i < 6; i++){
 
         for(let j = 0; j < 7; j++){
-            const weekend = isWeekend(date);
+            const weekend = ISWEEKEND(date);
             let out = "";
 
             if((i === 0 && j < getFirstDayOfTheMonth )|| date > daysInMonth){
@@ -83,4 +85,30 @@ function dayToday(){
     currentYear = today.getFullYear();
     showCurrentMonthYear(currentMonth, currentYear);
     monthYearInText();
+}
+
+function openModal(modal) {
+    if (modal == null) return
+
+    currentDay = event.currentTarget.textContent
+
+    const isUnderTen = number =>{
+        return number < 10;
+    }
+
+    if(currentDay === 'Add Time'){
+        dateSetter.innerHTML=`<label for="selectedDay">Select a day</label>
+        <input type="date" name="selectedDay" id="selectedDay" value="${currentYear}-${isUnderTen(currentMonth) ? "0" + currentMonth : currentMonth}-01">`;
+    }else{
+        dateSetter.innerHTML=`<label for="selectedDay">Select a day</label>
+        <input type="date" name="selectedDay" id="selectedDay" value="${currentYear}-${isUnderTen(currentMonth) ? "0" + currentMonth : currentMonth}-${isUnderTen(currentDay) ? "0" + currentDay : currentDay}">`;
+    }    
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
 }

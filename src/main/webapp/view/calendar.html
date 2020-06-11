@@ -38,6 +38,23 @@
                     <button class="btn-card" onclick=next()>Next</button>
                 </div>
             </section>
+            <div class="modal" id="modal">
+                <div class="modal-header">
+                    <div class="title">Add Appointment</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <section id="selectDay" class="modal-section">
+                        <label for="selectedDay">Select day</label>
+                        <input type="date" name="selectedDay" id="selectedDay">
+                    </section>
+                    <section class="modal-section">
+                        <label for="startTime">Hour</label>
+                        <input type="time" name="startTime" id="startTime" min="09:00:00" max="18:00:00">
+                    </section>
+                </div>
+                <input data-close-button class="close-button" id="addTime" value="Voeg toe" type="button">
+            </div>
       
         <footer class="copy-right">
             <div class="footer-bottom">
