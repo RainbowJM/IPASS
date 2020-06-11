@@ -1,18 +1,15 @@
 package project.ipass.application.model;
 
-
-import project.ipass.App;
-
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
-public class Application implements Serializable {
-    private static Application theApplication = new Application();
+public class Calendar implements Serializable {
+    private static Calendar theCalendar = new Calendar();
 
     // getters
-    public static Application getTheApplication(){
-        return theApplication;
+    public static Calendar getTheCalendar(){
+        return theCalendar;
     }
     public List<Appointment> getAllAppointments(){
         return Collections.unmodifiableList(Appointment.getAllAppointments());
@@ -22,7 +19,7 @@ public class Application implements Serializable {
     }
 
     // setters
-    public static void setTheApplication(Application application){
-        theApplication = application;
+    public static void setTheCalendar(Calendar calendar){
+        theCalendar = calendar;
     }
 }

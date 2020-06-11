@@ -3,7 +3,7 @@ package project.ipass.application.persistence;
 import com.azure.storage.blob.BlobClient;
 import com.azure.storage.blob.BlobContainerClient;
 import com.azure.storage.blob.BlobContainerClientBuilder;
-import project.ipass.application.model.Application;
+import project.ipass.application.model.Calendar;
 
 import java.io.*;
 
@@ -26,7 +26,7 @@ public class PersistenceManager {
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(baos);
-        oos.writeObject(Application.getTheApplication());
+        oos.writeObject(Calendar.getTheCalendar());
 
         byte[] bytez = baos.toByteArray();
 
@@ -51,9 +51,9 @@ public class PersistenceManager {
                 ObjectInputStream ois = new ObjectInputStream(bais);
 
                 Object obj = ois.readObject();
-                if (obj instanceof Application){
-                    Application loadA = (Application) obj;
-                    Application.setTheApplication(loadA);
+                if (obj instanceof Calendar){
+                    Calendar loadC = (Calendar) obj;
+                    Calendar.setTheCalendar(loadC);
                 }
                 baos.close();
                 bais.close();
