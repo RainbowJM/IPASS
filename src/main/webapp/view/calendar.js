@@ -63,7 +63,7 @@ function monthYearInText(){
     monthAndYear.innerHTML = " ";
     monthAndYear.appendChild(monthYearText);
 }
-
+// function to move to the previous month on the calendar
 function previous(){
     currentYear = currentMonth === 0 ? currentYear  - 1: currentYear;
     currentMonth = currentMonth === 0 ? 11 : currentMonth - 1;
@@ -71,14 +71,14 @@ function previous(){
     monthYearInText();
 
 }
-
+// function to move to the next month on the calendar
 function next(){
     currentYear = currentMonth === 11 ? currentYear + 1 : currentYear;
     currentMonth = (currentMonth + 1) % 12;
     showCurrentMonthYear(currentMonth, currentYear);
     monthYearInText();
 }
-
+// function to move to today on calendar
 function dayToday(){
     today = new Date();
     currentMonth = today.getMonth();
@@ -87,28 +87,56 @@ function dayToday(){
     monthYearInText();
 }
 
-function openModal(modal) {
-    if (modal == null) return
+// get modal element
+let modal = document.getElementById("appointmentModal");
+// get open modal button
+let modalButton = document.getElementById("add-appointment");
+// get close modal button
+let modalCloseButton = document.getElementById("close-button");
 
-    currentDay = event.currentTarget.textContent
+// listener for open modal click
+modalButton.addEventListener("click", event => openModal());
+// listener for close modal click
+modalCloseButton.addEventListener("click", event => closeModal());
+// listener for outside click
+window.addEventListener("click", event => clickOutside());
 
-    const isUnderTen = number =>{
-        return number < 10;
+// function to open modal
+function openModal(){
+    modal.style.display = "block";
+}
+// function to close modal 
+function closeModal(){
+    modal.style.display = "none";
+}
+// function to close modal from a outside click
+function clickOutside(e){
+    if(e.target == modal){
+        modal.style.display = "none";
     }
-
-    if(currentDay === 'Add Time'){
-        dateSetter.innerHTML=`<label for="selectedDay">Select a day</label>
-        <input type="date" name="selectedDay" id="selectedDay" value="${currentYear}-${isUnderTen(currentMonth) ? "0" + currentMonth : currentMonth}-01">`;
-    }else{
-        dateSetter.innerHTML=`<label for="selectedDay">Select a day</label>
-        <input type="date" name="selectedDay" id="selectedDay" value="${currentYear}-${isUnderTen(currentMonth) ? "0" + currentMonth : currentMonth}-${isUnderTen(currentDay) ? "0" + currentDay : currentDay}">`;
-    }    
-    modal.classList.add('active')
-    overlay.classList.add('active')
 }
+// function openModal(modal) {
+//     if (modal == null) return
 
-function closeModal(modal) {
-    if (modal == null) return
-    modal.classList.remove('active')
-    overlay.classList.remove('active')
-}
+//     currentDay = event.currentTarget.textContent
+
+//     const isUnderTen = number =>{
+//         return number < 10;
+//     }
+
+//     if(currentDay === 'Add Time'){
+//         dateSetter.innerHTML=`<label for="selectedDay">Select a day</label>
+//         <input type="date" name="selectedDay" id="selectedDay" value="${currentYear}-${isUnderTen(currentMonth) ? "0" + currentMonth : currentMonth}-01">`;
+//     }else{
+//         dateSetter.innerHTML=`<label for="selectedDay">Select a day</label>
+//         <input type="date" name="selectedDay" id="selectedDay" value="${currentYear}-${isUnderTen(currentMonth) ? "0" + currentMonth : currentMonth}-${isUnderTen(currentDay) ? "0" + currentDay : currentDay}">`;
+//     }    
+//     modal.classList.add('active')
+//     overlay.classList.add('active')
+// }
+
+// function closeModal(modal) {
+//     if (modal == null) return
+//     modal.classList.remove('active')
+//     overlay.classList.remove('active')
+// }

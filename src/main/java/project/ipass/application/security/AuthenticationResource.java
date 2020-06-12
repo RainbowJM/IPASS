@@ -28,8 +28,8 @@ public class AuthenticationResource {
                 .claim("role", role)
                 .signWith(SignatureAlgorithm.HS512, key)
                 .compact();
-
     }
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)

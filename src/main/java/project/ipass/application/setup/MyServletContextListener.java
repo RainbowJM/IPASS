@@ -16,7 +16,7 @@ public class MyServletContextListener implements ServletContextListener {
         new User("Isobel", "Hook", "Iso@hotmail.com","test3");
         new User("Tymon", "Bird", "ty@hotmail.com","test2");
         new User("Makenzie", "Castro","castro@hotmail.com","test1");
-        new User("Jevona", "Magdalena", "jmag@hotmial.com", "test").setAdmin();
+        new User("Jevona", "Magdalena", "jmag@hotmail.com", "test").setAdmin();
 
         // service
         new Service(1,"Small Boxbraid",8);

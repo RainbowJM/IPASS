@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Vona's Creation</title>
+        <link rel="shortcut icon" type="image/png" href="./logo noname.jpeg">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+           <div class="topper">
+               <div class="logo">
+                   <img src="./Vona Creations Logo T.png" alt="Vona's Creation logo"/>
+               </div>
+               <div class="login-container">
+                   <form onsubmit="signin(event)" action="#" id="loginForm">
+                       <label for="username" class="lab email">Email </label>
+                       <input type="text" placeholder="Email" id="username">
+                       <label for="password" class="lab psw">Password</label>
+                       <input type="text" placeholder="Password" id="password" >
+                       <button class="btn-header-signin" type="submit" id="login">Sign in</button>
+                       <!-- <button class="btn-header-signup" type="submit" href="signup.html">Sign up</button> -->
+                   </form>
+               </div>
+           </div>
+           <div class="welcome-text">
+               <!-- wrap, style, wild it ... repeat -->
+               <h1>wrap, style <br/>&<br/> wild it out <br/>repeat</h1>
+               <p>Make your appointment now...</p>
+           </div>
+        </header>
+        <!-- footer -->
+        <footer class="copy-right">
+            <div class="footer-content">
+                <div class="section about">
+                    <h1 class="logo-text">Vona's Creation</h1>
+                    <p>
+                        Vona’s Creation is here for you, our client.
+                        <br/>
+                        We are ready to do your hair & give you hair advise.
+                        <br/>                     
+                    </p>
+                    <div class="contact-information">
+                        <span><i class="fas fa-phone"></i> &nbsp; 31 6 03 84 84 67</span>
+                        <span><i class="fas fa-envelope"></i>&nbsp; info@vonacreation.com</span>
+                    </div>
+                    <div class="socials">
+                        <a href="http://facebook.com/vona.creation/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/vona.creation/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="section links">
+                    <h2>Quick Links</h2>
+                    <br/>
+                    <ul>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="https://www.instagram.com/vona.creation/">Gallery</a></li>
+                        <li><a href="#">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="section contact-form">
+                    <h2>Contact Us</h2>
+                    <br/>
+                    <form for="contact" action="index.html" method="POST">
+                        <label for="email">
+                        <input type="email" id="email" class="text-input contact-input" placeholder="Your email address...">
+                        </label>
+                        <label for="message">
+                        <textarea id="message" class="text-input context-input" placeholder="Your message..."></textarea>
+                        </label>
+                        <button id="contact" type="submit" class="btn-footer btn-form">Send</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2020 Vona's Creation | <span>Designed by Jevona Magdalena</span>
+            </div>
+        </footer>
+        <script src="https://kit.fontawesome.com/855a9b5d08.js" crossorigin="anonymous"></script>
+        <script src="homepage.js"></script>
+    </body>
+</html>

@@ -15,18 +15,38 @@ function validateEmail(email){
 }
 
 function signin(event){
-    let formData = new FormData(document.querySelector("loginForm"));
-    let encData = new URLSearchParams(formData.entries());
+    let unameElement = document.getElementById("username").value;
+    let pswElement = document.getElementById("password").value;
+    console.log("elementValue", unameElement, pswElement);
+    if(unameElement.trim() === "" || pswElement.trim() === ""){
+        alert("Please enter username and password");
+        return false;
+    }else{
+        let loginform = document.getElementById("loginForm");
+        let formData = new FormData(loginform);
+        formData.append("a","b");
+        console.log("your dick", formData.values());
+        let encData = new URLSearchParams(formData.entries());
+        // console.log(formData, encData);
 
-    fetch("rest/authentication", {method: 'POST', body: encData})
+        fetch("http://127.0.0.1:8080/restservices/authentication", {method: 'POST', body: encData})
         .then(function (response) {
-            if(response.ok) return response.json();
-            else throw "Wrong username/password";
+            if(response.ok) {
+                alert(ok);
+                console.log(respone.json());
+                return response.json();
+            }else {
+                alert("wrong");
+            throw "Wrong username/password";
+        }
+            
         })
         .then(myJson => window.sessionStorage.setItem("myJWT", myJson.JWT))
-        .catch(error => console.log(error));
-
+        .catch(error => alert(error) );
+        return true;
+    }
 }
+
 
 document.querySelector("#login").addEventListener("click", login);
 
