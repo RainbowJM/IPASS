@@ -24,15 +24,24 @@ function signin(event){
     }else{
         let loginform = document.getElementById("loginForm");
         let formData = new FormData(loginform);
-        formData.append("a","b");
-        console.log("your dick", formData.values());
-        let encData = new URLSearchParams(formData.entries());
-        // console.log(formData, encData);
+        //formData.append('username','jmag@hotmail.com');
+        //formData.append('password','test');
+        for(var pair of formData.entries()) {
+            console.log("valuepair " + pair[0]+ ', '+ pair[1]); 
+         }
+         let encData = new URLSearchParams(formData.entries());
+         for(var pair of encData.entries()) {
+            console.log("encddata "+pair[0]+ ', '+ pair[1]); 
+         }
+        // console.log("Bo stima mi", formData.entries());
+        
 
-        fetch("rest/authentication", {method: 'POST', body: encData})
+        // console.log("helo", formData.entries());
+        fetch("http://127.0.0.1:8080/restservices/authentication", {method: 'POST', body: encData})
         .then(function (response) {
+            console.log("your dick is small", response);
             if(response.ok) {
-                alert(ok);
+                alert("ok");
                 console.log(respone.json());
                 return response.json();
             }else {

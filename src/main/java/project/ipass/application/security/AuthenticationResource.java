@@ -36,6 +36,8 @@ public class AuthenticationResource {
     public Response authenticateUser(@FormParam("username") String username,
                                      @FormParam("password") String password){
         try{
+            System.out.println("user" + username + "pass" + password);
+
             String role = User.validateLogin(username, password);
 
             if(role == null){
