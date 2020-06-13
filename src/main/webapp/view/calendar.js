@@ -92,14 +92,14 @@ let modal = document.getElementById("appointmentModal");
 // get open modal button
 let modalButton = document.getElementById("add-appointment");
 // get close modal button
-let modalCloseButton = document.getElementById("close-button");
+let modalCloseButton = document.getElementsByClassName("close-button")[0];
 
 // listener for open modal click
-modalButton.addEventListener("click", event => openModal());
+modalButton.addEventListener("click", openModal);
 // listener for close modal click
-modalCloseButton.addEventListener("click", event => closeModal());
+modalCloseButton.addEventListener("click", closeModal);
 // listener for outside click
-window.addEventListener("click", event => clickOutside());
+window.addEventListener("click", clickOutside);
 
 // function to open modal
 function openModal(){

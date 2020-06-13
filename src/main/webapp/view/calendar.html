@@ -16,9 +16,7 @@
                             <img src="./Vona Creations Logo T.png" alt="Vona's Creation logo"/>
                         </li>
                         <li>
-                            <a href="#" class="text">
-                                <button id="add-appointment" class="navigation-button">Add Appointment</button>
-                            </a>
+                            <button id="add-appointment" class="navigation-button">Add Appointment</button>
                         </li>
                         <li>
                             <a href="#" class="text">
@@ -52,20 +50,23 @@
             <div class="modal" id="appointmentModal">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <div class="title">Add Appointment</div>
-                        <button data-close-button class="close-button">&times;</button>
+                        <span class="close-button">&times;</span>
+                        <h2 class="title">Add Appointment</h2>
                     </div>
                     <div class="modal-body">
                         <section id="appointmentDay" class="modal-section">
-                            <label for="selectedDay">Select day</label>
+                            <label for="selectedDay">Select day: </label>
                             <input type="date" name="selectedDay" id="selectedDay">
                         </section>
                         <section id="appointmentHour" class="modal-section">
-                            <label for="selectedHour">Hour</label>
+                            <label for="selectedHour">Hour: </label>
                             <input type="time" name="selectedHour" id="selectedHour" min="09:00:00" max="18:00:00">
                         </section>
                     </div>
-                    <input data-close-button class="close-button" id="addTime" value="Add to" type="button">
+                    <hr>
+                    <div class="modal-footer">
+                        <button id="modal-add-appointment">Add Appointment</button>
+                    </div>
                 </div>
             </div>
         <footer class="copy-right">
