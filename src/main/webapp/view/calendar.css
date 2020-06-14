@@ -179,6 +179,12 @@ li a:hover {
     color: black;
     text-align: center;
 }
+
+.modal-add-appointment-button{
+    padding: 5px;
+    font-size: 1.2em;
+    margin: 0;
+}
 .close-button{
     color: black;
     float: right;

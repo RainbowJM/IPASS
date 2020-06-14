@@ -11,6 +11,12 @@ public class Service {
         this.duration = duration;
     }
 
+    public Service(int serviceId, String serviceName){
+        this.serviceId = serviceId;
+        this.serviceName = serviceName;
+
+    }
+
     public String getServiceName(){
         return serviceName;
     }
