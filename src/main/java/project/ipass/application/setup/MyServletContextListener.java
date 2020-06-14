@@ -13,6 +13,7 @@ public class MyServletContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("initializing application");
+
         new User("Isobel", "Hook", "Iso@hotmail.com","test3");
         new User("Tymon", "Bird", "ty@hotmail.com","test2");
         new User("Makenzie", "Castro","castro@hotmail.com","test1");

@@ -22,10 +22,6 @@ public class Appointment{
         serviceName = getService().getServiceName();
         cName = getClient().getName();
         wName = getWorker().getName();
-
-        if (!allAppointments.contains(this)){
-            allAppointments.add(this);
-        }
     }
 
     public Appointment(int id, LocalDate date, int hour, String serviceName, String cName, String wName){

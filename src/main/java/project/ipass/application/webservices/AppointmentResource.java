@@ -9,12 +9,12 @@ import javax.ws.rs.core.Response;
 @Path("/Appointment")
 public class AppointmentResource {
 
-    @POST
-    @Path("/addAppointment")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response addAppointment(){
-        
-    }
+//    @POST
+//    @Path("/addAppointment")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public Response addAppointment(){
+//
+//    }
 
     @DELETE
     @Path("deleteAppointment/{appointmentid}")

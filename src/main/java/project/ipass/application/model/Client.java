@@ -6,10 +6,14 @@ import java.util.List;
 public final class Client extends User {
     private List<Appointment> appointments = new ArrayList<>();
 
-    public Client(String firstName, String lastName, String username, String password) {
-        super(firstName, lastName, username, password);
+    public Client(int userId, String firstName, String lastName, String username, String password) {
+        super(userId, firstName, lastName, username, password);
     }
 
+//    public static Client createClient(int userId, String firstName, String lastName, String username, String password){
+//
+//    }
+    // getters
     public List<Appointment> getAppointments() {
         return appointments;
     }

@@ -8,7 +8,8 @@ import java.util.List;
 
 public class User implements Principal {
     private static List<User> allUsers = new ArrayList<>();
-    private static int userId = 0;
+    private static int nrUser = 0;
+    private int userId;
     private String firstName;
     private String lastName;
     private String username;
@@ -17,7 +18,16 @@ public class User implements Principal {
 
 
     public User(String firstName, String lastName, String username, String password){
-        userId = userId++;
+        nrUser = nrUser++;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.plainpassword = password;
+
+    }
+
+    public User(int userId, String firstName, String lastName, String username, String password){
+        this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -27,26 +37,6 @@ public class User implements Principal {
         if (!allUsers.contains(this)){
             allUsers.add(this);
         }
-
-    }
-
-    public void setAdmin(){
-        role = "admin";
-    }
-
-    @Override
-    public String getName() {
-        return username;
-    }
-
-    public String getRole() {
-        return role;
-    }
-    public static User getUserByName(String uname){
-        return allUsers.stream()
-                .filter(e -> e.username.equals(uname)) // als de username gelijk is aan de username die binnen komt
-                .findFirst() // dan wil ik dat je het vind
-                .orElse(null); //anders return null
     }
 
     public static String validateLogin(String username, String password){
@@ -56,8 +46,27 @@ public class User implements Principal {
         }
         return null;
     }
+    // getters
+    public static User getUser(int userId){
+        return allUsers.stream().filter(e -> e.userId == userId).findFirst().orElse(null);
+    }
+    public static User getUserByName(String uname){
+        return allUsers.stream()
+                .filter(e -> e.username.equals(uname)) // als de username gelijk is aan de username die binnen komt
+                .findFirst() // dan wil ik dat je het vind
+                .orElse(null); //anders return null
+    }
+
     public static List<User> getAllUsers(){
         return Collections.unmodifiableList(allUsers);
+    }
+    @Override
+    public String getName() {
+        return username;
+    }
+
+    public String getRole() {
+        return role;
     }
 
     public int getUserId() {
@@ -78,6 +87,11 @@ public class User implements Principal {
 
     public String getUsername() {
         return username;
+    }
+
+    // setters
+    public void setAdmin(){
+        role = "admin";
     }
 
     public void setFirstName(String firstName) {
