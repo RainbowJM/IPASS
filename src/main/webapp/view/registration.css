@@ -18,6 +18,12 @@ body{
     box-shadow: 0 5px 8px 0 wheat, 0 7px 20px 0 coral;
     padding: 25px;
 }
+.wrapper .close-button{
+    float: right;
+    border: none;
+    background-color: white;
+    line-height: 25px;
+}
 
 .wrapper .title{
     font-size: 30px;
