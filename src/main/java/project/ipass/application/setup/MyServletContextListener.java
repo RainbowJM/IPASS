@@ -30,7 +30,7 @@ public class MyServletContextListener implements ServletContextListener {
         new Service(9,"Medium Braids",3);
         new Service(10,"Small Braida",4);
         new Service(11,"Flat Twist",3);
-        new Service(12,"Vacation");
+        new Service(12,"Vacation", 8);
     }
     @Override
     public void contextDestroyed(ServletContextEvent sce) {

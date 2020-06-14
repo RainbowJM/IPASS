@@ -2,18 +2,22 @@ package project.ipass.application.webservices;
 
 import project.ipass.application.model.Appointment;
 
-import javax.ws.rs.DELETE;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/Appointment")
 public class AppointmentResource {
 
+    @POST
+    @Path("/addAppointment")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addAppointment(){
+        
+    }
+
     @DELETE
-    @Path("delete/{appointmentid}")
+    @Path("deleteAppointment/{appointmentid}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteAppointment(@PathParam("appointmentid") int id){
         return Appointment.removeAppointment(id)

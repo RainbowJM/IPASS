@@ -209,3 +209,8 @@ li a:hover {
     font-size: 1.1em;
 }
 
+.copy-right .footer-bottom span{
+    font-style: italic;
+    color: coral;
+}
+

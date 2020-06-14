@@ -88,31 +88,31 @@ function dayToday(){
 }
 
 // get modal element
-let modal = document.getElementById("appointmentModal");
+const MODAL = document.getElementById("appointmentModal");
 // get open modal button
-let modalButton = document.getElementById("add-appointment");
+const MODALBUTTON = document.getElementById("add-appointment");
 // get close modal button
-let modalCloseButton = document.getElementsByClassName("close-button")[0];
+const MODALCLOSEBUTTON = document.getElementsByClassName("close-button")[0];
 
 // listener for open modal click
-modalButton.addEventListener("click", openModal);
+MODALBUTTON.addEventListener("click", openModal);
 // listener for close modal click
-modalCloseButton.addEventListener("click", closeModal);
+MODALCLOSEBUTTON.addEventListener("click", closeModal);
 // listener for outside click
 window.addEventListener("click", clickOutside);
 
 // function to open modal
 function openModal(){
-    modal.style.display = "block";
+    MODAL.style.display = "block";
 }
 // function to close modal 
 function closeModal(){
-    modal.style.display = "none";
+    MODAL.style.display = "none";
 }
 // function to close modal from a outside click
 function clickOutside(e){
-    if(e.target == modal){
-        modal.style.display = "none";
+    if(e.target == MODAL){
+        MODAL.style.display = "none";
     }
 }
 // function openModal(modal) {

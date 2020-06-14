@@ -1,3 +1,5 @@
+// get sign in button
+
 function validateLogin(){
     let unameElement = document.getElementById("username");
     let pswElement = document.getElementById("password").value;
@@ -24,15 +26,15 @@ function signin(event){
     }else{
         let loginform = document.getElementById("loginForm");
         let formData = new FormData(loginform);
-         formData.append('username',unameElement);
-         formData.append('password',pswElement);
-         for(var pair of formData.entries()) {
+        formData.append('username',unameElement);
+        formData.append('password',pswElement);
+        for(var pair of formData.entries()) {
             console.log("valuepair " + pair[0]+ ', '+ pair[1]); 
-         }
-         let encData = new URLSearchParams(formData.entries());
-         for(var pair of encData.entries()) {
+        }
+        let encData = new URLSearchParams(formData.entries());
+        for(var pair of encData.entries()) {
             console.log("encddata "+pair[0]+ ', '+ pair[1]); 
-         }
+        }
         fetch("http://127.0.0.1:8080/restservices/authentication", {method: 'POST', body: encData})
         .then(function (response) {
             if(response.ok) {

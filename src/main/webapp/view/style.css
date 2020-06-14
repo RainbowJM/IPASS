@@ -158,6 +158,11 @@ header{
     padding-top: 20px;
     font-size: 1.1em;
 }
+
+.copy-right .footer-bottom span{
+    font-style: italic;
+    color: coral;
+}
 @media screen and (min-width: 479px){
     header{
         width: 100%;
