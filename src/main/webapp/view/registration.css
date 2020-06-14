@@ -84,7 +84,8 @@ body{
     font-size: 1.1em;
 }
 .copy-right .footer-bottom span{
-    font-weight: italic;
+    font-style: italic;
+    color: coral;
 }
 @media (max-width: 420px){
     .wrapper .title{
