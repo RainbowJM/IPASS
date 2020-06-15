@@ -1,15 +1,6 @@
-// get sign in button
+import {calendarService} from "../service/calendar-service.js";
 
-function validateLogin(){
-    let unameElement = document.getElementById("username");
-    let pswElement = document.getElementById("password").value;
-    if(unameElement.value.trim() === "" || pswElement.value.trim() === ""){
-        alert("Please enter username and password");
-        return false;
-    }else{
-        return true;
-    }
-}
+// get sign in button
 
 function validateEmail(email){
     const REGX = /^([a-zA-Z0-9\.-_]+)@([a-zA-Z0-9-]+).([a-z]{2,10})$/;
@@ -19,7 +10,6 @@ function validateEmail(email){
 function signin(event){
     let unameElement = document.getElementById("username").value;
     let pswElement = document.getElementById("password").value;
-    console.log("elementValue", unameElement, pswElement);
     if(unameElement.trim() === "" || pswElement.trim() === ""){
         alert("Please enter username and password");
         return false;
