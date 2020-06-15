@@ -3,9 +3,10 @@ let firstNameElement = document.getElementById("first-name").value;
 let lastNameElement = document.getElementById("last-name").value;
 let usrElement = document.getElementById("username").value;
 let pswElement = document.getElementById("password").value;
-const SIGNUPBUTTON = 
+const SIGNUPBUTTON = document.getElementById('#signup');
 
-// get button
+// set listener
+SIGNUPBUTTON.addEventListener("click", register);
 
 function register(){
     if (firstNameElement.trim() === "" || lastNameElement.trim() === "" || usrElement.trim() === "" || pswElement.trim() === ""){
@@ -14,10 +15,13 @@ function register(){
     }else{
         let registerForm = document.getElementById("registerForm");
         let formData = new FormData(registerForm);
+
         formData.append("firstName", firstNameElement);
         formData.append("lastName", lastNameElement);
         formData.append("username", usrElement);
         formData.append("password", pswElement);
+
+        let encData = new URLSearchParams(formData.entries());
 
         fetch("http://127.0.0.1:8080/restservices/user", {method: 'POST', body: encData})
         .then(function (response) {

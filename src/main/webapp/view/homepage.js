@@ -1,4 +1,4 @@
-import {calendarService} from "../service/calendar-service.js";
+// import {calendarService} from "../service/calendar-service.js";
 
 // get sign in button
 
@@ -10,6 +10,7 @@ function validateEmail(email){
 function signin(event){
     let unameElement = document.getElementById("username").value;
     let pswElement = document.getElementById("password").value;
+    console.log("elementValue", unameElement, pswElement);
     if(unameElement.trim() === "" || pswElement.trim() === ""){
         alert("Please enter username and password");
         return false;

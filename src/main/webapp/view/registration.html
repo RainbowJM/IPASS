@@ -13,7 +13,7 @@
             <a href="homepage.html">
                 <button class="close-button">&times;</button>
             </a>
-            <form id="registerForm" name="registerForm">
+            <form onsubmit="register()" action="#" id="registerForm" name="registerForm">
                 <div class="title">Registration</div>
                 <div class="form">
                     <div class="input-field first-name">
@@ -33,7 +33,7 @@
                         <!-- remember to change type from text to password  -->
                         <input type="text" id="password" name="password" class="input">
                     </div>
-                    <button class="submit-btn">Register</button>
+                    <button class="submit-btn" type="submit" id="signup">Register</button>
                 </div>
             </form>
         </div>
