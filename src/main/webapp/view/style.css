@@ -75,6 +75,7 @@ header{
     flex: 1;
     padding: 25px;
     border: 1px solid white;
+    text-align: center;
 }
 .copy-right .footer-content h1,
 .copy-right .footer-content h2{
@@ -103,6 +104,7 @@ header{
 }
 .copy-right .footer-content .links ul li{ 
     color: black;
+    text-align: center;
 }
 .copy-right .footer-content .links ul li a{ 
     display: block;
@@ -111,6 +113,7 @@ header{
     margin-bottom: 10px;
     transition: all .3s;
     color: black;
+    text-align: center;
 }
 .copy-right .footer-content .links ul li a:hover{
     color: white;
@@ -122,30 +125,7 @@ header{
     margin-left: 15px;
     transition: all .3s;
 }
-.copy-right .footer-content .contact-form .contact-input{
-    background: white;
-    color: black;
-    margin-bottom: 10px;
-    line-height: 1.5rem;
-    padding: .7rem 8rem;
-    border: none;
-}
-.copy-right .footer-content .contact-form .context-input{
-    background: white;
-    color: black;
-    margin-bottom: 10px;
-    line-height: 1.5rem;
-    padding: .7rem 8rem;
-    border: none;
-}
-.btn-form{
-    padding: 0.3rem 1.2rem;
-    background: white;
-}
-.btn-form:hover{
-    color: white;
-    background: rgb(228, 164, 113);
-}
+
 .copy-right .footer-bottom{
     background: white;
     color: black;

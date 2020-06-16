@@ -34,8 +34,10 @@ function signin(event){
         fetch("http://127.0.0.1:8080/restservices/authentication", {method: 'POST', body: encData})
         .then(function (response) {
             if(response.ok) {
+                console.log("h");
                 return response.json();
             }else {
+                console.log("HH")
             throw "Wrong username/password";}
         })
         .then(function(myJson){
