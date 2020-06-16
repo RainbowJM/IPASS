@@ -1,6 +1,11 @@
 // import {calendarService} from "../service/calendar-service.js";
 
-// get sign in button
+// get element
+const LOGINBUTTON = document.getElementById("login");
+
+// set listener
+LOGINBUTTON.addEventListener("click", signin);
+
 
 function validateEmail(email){
     const REGX = /^([a-zA-Z0-9\.-_]+)@([a-zA-Z0-9-]+).([a-z]{2,10})$/;
@@ -41,8 +46,6 @@ function signin(event){
         return true;
     }
 }
-
-document.querySelector("#login").addEventListener("click", login);
 
 function signout(){
     localStorage.removeItem("username");

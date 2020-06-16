@@ -144,11 +144,11 @@ li a:hover {
 }
 
 .modal-content{
-    background-color: white;
+    background-color: #ffffff;
     margin: 20% auto;
     padding: 20px;
-    width: 70%;
-    box-shadow: 0 5px 8px 0 black, 0 7px 20px 0 blueviolet;
+    width: 40%;
+    box-shadow: 0 5px 8px 0 black, 0 7px 20px 0 coral;
     animation-name: modalopen;
     animation-duration: 1s;
 }
@@ -158,14 +158,41 @@ li a:hover {
     to{ opacity: 1;}
 }
 
+.modal-header{
+    background: coral;
+    padding: 15px;
+    color: black;
+    text-align: center;
+    font-size: 1.5em;
+}
+.modal-header h2{
+    margin: 0;
+}
+
+.modal-body{
+    text-align: center;
+    font-size: 1.4em;
+}
+.modal-footer{
+    background: coral;
+    padding: 15px;
+    color: black;
+    text-align: center;
+}
+
+.modal-add-appointment-button{
+    padding: 5px;
+    font-size: 1.2em;
+    margin: 0;
+}
 .close-button{
-    color: burlywood;
+    color: black;
     float: right;
     font-size: 30px;
 }
 
 .close-button:hover, .close-button:focus{
-    color: chartreuse;
+    color: white;
     text-decoration: none;
     cursor: pointer;
 }
@@ -180,5 +207,9 @@ li a:hover {
     left: 0px;
     padding-top: 20px;
     font-size: 1.1em;
+}
+
+.copy-right .footer-bottom span{
+    font-style: italic;
 }
 

@@ -158,9 +158,22 @@ header{
     padding-top: 20px;
     font-size: 1.1em;
 }
+
+.copy-right .footer-bottom span{
+    font-style: italic;
+    color: coral;
+}
 @media screen and (min-width: 479px){
     header{
         width: 100%;
     }
+
+    .login-container{
+        float: right;
+        list-style: none;
+        margin-top: 30px;
+    }
    
 }
+
+/* @media screen and (max-width: 600px) */

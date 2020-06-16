@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vona's Creation - Registration</title>
+    <link rel="shortcut icon" type="image/png" href="logo noname.jpeg">
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <a href="homepage.html">
+                <button class="close-button">&times;</button>
+            </a>
+            <form onsubmit="register()" action="#" id="registerForm" name="registerForm">
+                <div class="title">Registration</div>
+                <div class="form">
+                    <div class="input-field first-name">
+                        <label for="first-name">First Name: </label>
+                        <input type="text" id="first-name" name="first-name" class="input">
+                    </div>
+                    <div class="input-field last-name">
+                        <label for="last-name">Last Name: </label>
+                        <input type="text" id="last-name" name="last-name" class="input">
+                    </div>
+                    <div class="input-field username">
+                        <label for="username">Username: </label>
+                        <input type="text" id="username" name="username" class="input">
+                    </div>
+                    <div class="input-field password">
+                        <label for="password">Password: </label>
+                        <!-- remember to change type from text to password  -->
+                        <input type="text" id="password" name="password" class="input">
+                    </div>
+                    <button class="submit-btn" type="submit" id="signup">Register</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="copy-right">
+        <div class="footer-bottom">
+            &copy; 2020 Vona's Creation | <span>Designed by Jevona Magdalena</span>
+        </div>
+    </footer>
+    <script src="registration.js"></script>
+</body>
+</html>

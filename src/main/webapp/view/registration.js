@@ -3,10 +3,10 @@ let firstNameElement = document.getElementById("first-name").value;
 let lastNameElement = document.getElementById("last-name").value;
 let usrElement = document.getElementById("username").value;
 let pswElement = document.getElementById("password").value;
-const SIGNUPBUTTON = document.getElementById('#signup');
+// const SIGNUPBUTTON = document.getElementById('#signup');
 
 // set listener
-SIGNUPBUTTON.addEventListener("click", register);
+document.getElementById('#signup').addEventListener("click", signup);
 
 function register(){
     if (firstNameElement.trim() === "" || lastNameElement.trim() === "" || usrElement.trim() === "" || pswElement.trim() === ""){
