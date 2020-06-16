@@ -4,52 +4,60 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 public class Appointment{
     private static List<Appointment> allAppointments = new ArrayList<>();
     private int appointmentId;
-    private static int numAppointment = 0;
+    private static int lastAppointmentId = 0;
     private LocalDate date;
     private int hour;
     private Service service;
     private Worker worker;
     private Client client;
 
-    public Appointment(LocalDate date, int hour, String serviceName, String cName, String wName){
-        appointmentId = numAppointment++;
+    public Appointment(LocalDate date, int hour, Service service, Client client, Worker worker){
+        appointmentId = lastAppointmentId++;
         this.date = date;
         this.hour = hour;
-        serviceName = getService().getServiceName();
-        cName = getClient().getName();
-        wName = getWorker().getName();
+        this.service = service;
+        this.client = client;
+        this.worker = worker;
     }
 
-    public Appointment(int id, LocalDate date, int hour, String serviceName, String cName, String wName){
+    public Appointment(int id, LocalDate date, int hour, Service service, Client client, Worker worker){
         this.appointmentId = id;
         this.date = date;
         this.hour = hour;
-        serviceName = getService().getServiceName();
-        cName = getClient().getName();
-        wName = getWorker().getName();
+        this.service = service;
+        this.client = client;
+        this.worker = worker;
 
         if (!allAppointments.contains(this)){
             allAppointments.add(this);
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Appointment that = (Appointment) o;
+        return hour == that.hour &&
+                date.equals(that.date) &&
+                Objects.equals(worker, that.worker);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(date, hour, worker);
+    }
+
     // calendarArray [2004][12][25][13][20] = appA
-    public void addAppointment(LocalDate date, int hour, String serviceName, String cName, String wName){
-        serviceName = getService().getServiceName();
-        cName = getClient().getName();
-        wName = getWorker().getName();
-        for (Appointment appointment : allAppointments){
-            if (date == appointment.getDate()){
-                if (hour == appointment.getHour()){
-                    break;
-                }else{
-                    allAppointments.add(new Appointment(date, hour, serviceName, cName, wName));
-                }
-            }
+
+    public void addAppointment(Appointment appointment){
+        if(!allAppointments.contains(appointment)){
+            allAppointments.add(appointment);
         }
     }
 
@@ -96,6 +104,7 @@ public class Appointment{
     public void setAppointmentId(int appointmentId) {
         this.appointmentId = appointmentId;
     }
+
     public void setClient(Client client) {
         this.client = client;
     }
