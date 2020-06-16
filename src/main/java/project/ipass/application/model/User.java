@@ -23,7 +23,11 @@ public class User implements Principal {
         this.lastName = lastName;
         this.username = username;
         this.plainpassword = password;
+        role = "user";
 
+        if (!allUsers.contains(this)){
+            allUsers.add(this);
+        }
     }
 
     public User(int userId, String firstName, String lastName, String username, String password){
@@ -46,9 +50,13 @@ public class User implements Principal {
         }
         return null;
     }
+
     // getters
     public static User getUser(int userId){
-        return allUsers.stream().filter(e -> e.userId == userId).findFirst().orElse(null);
+        return allUsers.stream()
+                .filter(e -> e.userId == userId)
+                .findFirst()
+                .orElse(null);
     }
     public static User getUserByName(String uname){
         return allUsers.stream()
