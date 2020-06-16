@@ -1,6 +1,11 @@
 // import {calendarService} from "../service/calendar-service.js";
 
-// get sign in button
+// get element
+const LOGINBUTTON = document.getElementById("login");
+
+// set listener
+LOGINBUTTON.addEventListener("click", signin);
+
 
 function validateEmail(email){
     const REGX = /^([a-zA-Z0-9\.-_]+)@([a-zA-Z0-9-]+).([a-z]{2,10})$/;
@@ -29,8 +34,10 @@ function signin(event){
         fetch("http://127.0.0.1:8080/restservices/authentication", {method: 'POST', body: encData})
         .then(function (response) {
             if(response.ok) {
+                console.log("h");
                 return response.json();
             }else {
+                console.log("HH")
             throw "Wrong username/password";}
         })
         .then(function(myJson){
@@ -41,8 +48,6 @@ function signin(event){
         return true;
     }
 }
-
-document.querySelector("#login").addEventListener("click", signin(event));
 
 function signout(){
     localStorage.removeItem("username");
