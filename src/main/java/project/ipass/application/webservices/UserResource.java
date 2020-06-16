@@ -1,24 +1,14 @@
 package project.ipass.application.webservices;
 
-import project.ipass.application.model.Calendar;
 import project.ipass.application.model.User;
 
-import javax.annotation.security.PermitAll;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.AbstractMap;
-import java.util.List;
 
 @Path("/user")
 public class UserResource {
-
-    @GET
-    @PermitAll
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<User> getAllUser(){
-        return Calendar.getAllUsers();
-    }
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)

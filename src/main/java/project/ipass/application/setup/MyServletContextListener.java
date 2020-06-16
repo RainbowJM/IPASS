@@ -1,7 +1,9 @@
 package project.ipass.application.setup;
 
+import project.ipass.application.model.Appointment;
 import project.ipass.application.model.Service;
 import project.ipass.application.model.User;
+import project.ipass.application.webservices.AppointmentResource;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -32,6 +34,9 @@ public class MyServletContextListener implements ServletContextListener {
         new Service(10,"Small Braida",4);
         new Service(11,"Flat Twist",3);
         new Service(12,"Vacation", 8);
+
+        //appointment
+//        new Appointment(2020-8-1, 13,"Small Boxbraid", Isobel, "Jevona");
     }
     @Override
     public void contextDestroyed(ServletContextEvent sce) {

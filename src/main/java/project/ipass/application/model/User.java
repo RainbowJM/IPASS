@@ -18,20 +18,7 @@ public class User implements Principal {
 
 
     public User(String firstName, String lastName, String username, String password){
-        nrUser = nrUser++;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = username;
-        this.plainpassword = password;
-        role = "user";
-
-        if (!allUsers.contains(this)){
-            allUsers.add(this);
-        }
-    }
-
-    public User(int userId, String firstName, String lastName, String username, String password){
-        this.userId = userId;
+        userId = nrUser++;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
