@@ -11,7 +11,7 @@ public class Calendar implements Serializable {
     public static Calendar getTheCalendar(){
         return theCalendar;
     }
-    public List<Appointment> getAllAppointments(){
+    public static List<Appointment> getAllAppointments(){
         return Collections.unmodifiableList(Appointment.getAllAppointments());
     }
     public static List<User> getAllUsers(){

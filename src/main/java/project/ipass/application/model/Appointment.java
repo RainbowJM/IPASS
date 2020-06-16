@@ -23,19 +23,11 @@ public class Appointment{
         this.service = service;
         this.client = client;
         this.worker = worker;
-    }
-
-    public Appointment(int id, LocalDate date, int hour, Service service, Client client, Worker worker){
-        this.appointmentId = id;
-        this.date = date;
-        this.hour = hour;
-        this.service = service;
-        this.client = client;
-        this.worker = worker;
 
         if (!allAppointments.contains(this)){
             allAppointments.add(this);
         }
+        allAppointments.add(this);
     }
 
     @Override
@@ -51,14 +43,6 @@ public class Appointment{
     @Override
     public int hashCode() {
         return Objects.hash(date, hour, worker);
-    }
-
-    // calendarArray [2004][12][25][13][20] = appA
-
-    public void addAppointment(Appointment appointment){
-        if(!allAppointments.contains(appointment)){
-            allAppointments.add(appointment);
-        }
     }
 
     public static  boolean removeAppointment(int id){

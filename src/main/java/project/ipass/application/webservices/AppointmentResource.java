@@ -1,10 +1,11 @@
 package project.ipass.application.webservices;
 
-import project.ipass.application.model.Appointment;
+import project.ipass.application.model.*;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.time.LocalDate;
 
 @Path("/Appointment")
 public class AppointmentResource {
@@ -12,8 +13,14 @@ public class AppointmentResource {
 //    @POST
 //    @Path("/addAppointment")
 //    @Produces(MediaType.APPLICATION_JSON)
-//    public Response addAppointment(){
-//
+//    public Response createAppointment(@FormParam("day")LocalDate date,
+//                                      @FormParam("hour")int time,
+//                                      @FormParam("type-service") Service service,
+//                                      @FormParam("client") Client clnt,
+//                                      @FormParam("worker") Worker worker){
+//        for (Appointment appoint : Calendar.getAllAppointments()){
+//            if
+//        }
 //    }
 
     @DELETE
