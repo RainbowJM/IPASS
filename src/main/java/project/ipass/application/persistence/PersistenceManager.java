@@ -9,7 +9,7 @@ import java.io.*;
 
 public class PersistenceManager {
     private final static String ENDPOINT = "https://ipassappblobstorage.blob.core.windows.net/";
-    private final static String SASTOKEN = "?sv=2019-10-10&ss=b&srt=sco&sp=rwdlacx&se=2020-12-06T11:59:00Z&st=2020-06-11T17:25:00Z&spr=https&sig=JMqwAqKhMHvxhlxLsDHE%2Bgzq06gRph2FJJbob7Q23ww%3D";
+    private final static String SASTOKEN = "?sv=2019-10-10&ss=b&srt=sco&sp=rwdlacx&se=2021-06-20T01:30:40Z&st=2020-06-20T17:40:00Z&spr=https&sig=YtBe5TjaCBLlHJ%2Bo0c06DikwbOk0aDl%2BtbCtgY8cG6E%3D";
     private final static String CONTAINER = "applicationcontainer";
 
     private static BlobContainerClient blobContainer = new BlobContainerClientBuilder()
@@ -19,7 +19,7 @@ public class PersistenceManager {
             .buildClient();
 
     public static void saveApplicationToAzure() throws IOException {
-        if (blobContainer.exists()){
+        if (!blobContainer.exists()){
             blobContainer.create();
         }
         BlobClient blob = blobContainer.getBlobClient("application_blob");
