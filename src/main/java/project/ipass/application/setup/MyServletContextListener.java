@@ -1,11 +1,13 @@
 package project.ipass.application.setup;
 
 import project.ipass.application.model.*;
+import project.ipass.application.persistence.PersistenceManager;
 import project.ipass.application.webservices.AppointmentResource;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import java.io.IOException;
 import java.util.Date;
 
 @WebListener
@@ -40,9 +42,28 @@ public class MyServletContextListener implements ServletContextListener {
         //appointment
         Date a = new Date();
         new Appointment(a, 13,s1, c1, w1);
+
+//        try {
+//            PersistenceManager.loadApplicationFromAzure();
+//            System.out.println("Calendar loaded!");
+//        } catch (IOException e) {
+//            System.out.println("Cannot load calendar!");
+//            e.printStackTrace();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
     }
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         System.out.println("terminating application");
+
+//        try {
+//            PersistenceManager.saveApplicationToAzure();
+//            System.out.println("Calendar saved!");
+//        } catch (IOException e) {
+//            System.out.println("Failed to save the calendar");
+//            e.printStackTrace();
+//        }
     }
 }

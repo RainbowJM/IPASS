@@ -17,6 +17,9 @@ public class Calendar implements Serializable {
     public static List<User> getAllUsers(){
         return Collections.unmodifiableList(User.getAllUsers());
     }
+    public static List<Worker> getallWorkers(){
+        return Collections.unmodifiableList(Worker.getWorkers());
+    }
 
     // setters
     public static void setTheCalendar(Calendar calendar){
