@@ -2,28 +2,31 @@ package project.ipass.application.webservices;
 
 import project.ipass.application.model.*;
 
+import javax.annotation.security.PermitAll;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.time.LocalDate;
+import java.util.Date;
 
-@Path("/Appointment")
+@Path("/appointment")
 public class AppointmentResource {
-
+//
 //    @POST
-//    @Path("/addAppointment")
+//    @PermitAll
 //    @Produces(MediaType.APPLICATION_JSON)
-//    public Response createAppointment(@FormParam("day")LocalDate date,
-//                                      @FormParam("hour")int time,
-//                                      @FormParam("type-service") Service service,
-//                                      @FormParam("client") Client clnt,
-//                                      @FormParam("worker") Worker worker){
+//    public Response createAppointment(@FormParam("day") Date date,
+//                                      @FormParam("hour") int time,
+//                                      @FormParam("serviceId") int serviceId,
+//                                      @FormParam("clientId") int clientId,
+//                                      @FormParam("workerId") int workerId){
+//
 //        for (Appointment appoint : Calendar.getAllAppointments()){
 //            if
 //        }
 //    }
 
     @DELETE
+    @PermitAll
     @Path("deleteAppointment/{appointmentid}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteAppointment(@PathParam("appointmentid") int id){

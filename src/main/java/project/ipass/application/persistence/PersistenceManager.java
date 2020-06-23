@@ -9,7 +9,7 @@ import java.io.*;
 
 public class PersistenceManager {
     private final static String ENDPOINT = "https://ipassappblobstorage.blob.core.windows.net/";
-    private final static String SASTOKEN = "?sv=2019-10-10&ss=b&srt=sco&sp=rwdlacx&se=2021-06-20T01:30:40Z&st=2020-06-20T17:40:00Z&spr=https&sig=YtBe5TjaCBLlHJ%2Bo0c06DikwbOk0aDl%2BtbCtgY8cG6E%3D";
+    private final static String SASTOKEN = "?sv=2019-10-10&ss=b&srt=sco&sp=rwdlacx&se=2020-12-31T19:29:29Z&st=2020-06-23T10:30:00Z&spr=https&sig=XWfDITOeFCNKVmFqkVMxhp%2B4VWaTpWkYrCBiX4KD%2B%2F4%3D";
     private final static String CONTAINER = "applicationcontainer";
 
     private static BlobContainerClient blobContainer = new BlobContainerClientBuilder()

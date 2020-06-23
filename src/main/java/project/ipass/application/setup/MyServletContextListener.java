@@ -1,13 +1,12 @@
 package project.ipass.application.setup;
 
-import project.ipass.application.model.Appointment;
-import project.ipass.application.model.Service;
-import project.ipass.application.model.User;
+import project.ipass.application.model.*;
 import project.ipass.application.webservices.AppointmentResource;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
+import java.util.Date;
 
 @WebListener
 public class MyServletContextListener implements ServletContextListener {
@@ -16,27 +15,31 @@ public class MyServletContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("initializing application");
 
-        new User("Isobel", "Hook", "Iso@hotmail.com","test3");
-        new User("Tymon", "Bird", "ty@hotmail.com","test2");
-        new User("Makenzie", "Castro","castro@hotmail.com","test1");
+        Client c1 = new Client("Isobel", "Hook", "Iso@hotmail.com","test3");
+        Client c2 = new Client("Tymon", "Bird", "ty@hotmail.com","test2");
+        Client c3 = new Client("Makenzie", "Castro","castro@hotmail.com","test1");
+
+        Worker w1 = new Worker("Jevona", "Magdalena", "jmag@hotmail.com", "test");
+
         new User("Jevona", "Magdalena", "jmag@hotmail.com", "test").setAdmin();
 
         // service
-        new Service(1,"Small Boxbraid",8);
-        new Service(2,"Medium Boxbraid",6);
-        new Service(3,"Large Boxbraid",4);
-        new Service(4,"Small Twistbraid",7);
-        new Service(5,"Medium Twistbraid",5);
-        new Service(6,"Large Twistbraid",3);
-        new Service(7,"Medium Twist",4);
-        new Service(8,"Small Twist",3);
-        new Service(9,"Medium Braids",3);
-        new Service(10,"Small Braida",4);
-        new Service(11,"Flat Twist",3);
-        new Service(12,"Vacation", 8);
+        Service s1 = new Service(1,"Small Boxbraid",8);
+        Service s2 = new Service(2,"Medium Boxbraid",6);
+        Service s3 = new Service(3,"Large Boxbraid",4);
+        Service s4 = new Service(4,"Small Twistbraid",7);
+        Service s5 = new Service(5,"Medium Twistbraid",5);
+        Service s6 = new Service(6,"Large Twistbraid",3);
+        Service s7 = new Service(7,"Medium Twist",4);
+        Service s8 = new Service(8,"Small Twist",3);
+        Service s9 = new Service(9,"Medium Braids",3);
+        Service s10 = new Service(10,"Small Braids",4);
+        Service s11 = new Service(11,"Flat Twist",3);
+        Service s12 = new Service(12,"Vacation", 8);
 
         //appointment
-//        new Appointment(2020-8-1, 13,"Small Boxbraid", Isobel, "Jevona");
+        Date a = new Date();
+        new Appointment(a, 13,s1, c1, w1);
     }
     @Override
     public void contextDestroyed(ServletContextEvent sce) {

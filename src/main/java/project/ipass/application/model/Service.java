@@ -14,7 +14,6 @@ public class Service {
     public Service(int serviceId, String serviceName){
         this.serviceId = serviceId;
         this.serviceName = serviceName;
-
     }
 
     public String getServiceName(){
