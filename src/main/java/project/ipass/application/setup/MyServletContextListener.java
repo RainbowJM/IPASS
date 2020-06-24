@@ -16,13 +16,12 @@ public class MyServletContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         System.out.println("initializing application");
 
+        Worker w1 = new Worker("Jevona", "Magdalena", "jmag@hotmail.com", "test");
+        w1.setAdmin();
+
         Client c1 = new Client("Isobel", "Hook", "Iso@hotmail.com","test3");
         Client c2 = new Client("Tymon", "Bird", "ty@hotmail.com","test2");
         Client c3 = new Client("Makenzie", "Castro","castro@hotmail.com","test1");
-
-        Worker w1 = new Worker("Jevona", "Magdalena", "jmag@hotmail.com", "test");
-
-        new User("Jevona", "Magdalena", "jmag@hotmail.com", "test").setAdmin();
 
         // service
         Service s1 = new Service(1,"Small Boxbraid",8);

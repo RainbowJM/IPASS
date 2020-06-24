@@ -8,7 +8,7 @@ import java.util.List;
 
 public class User implements Principal {
     private static List<User> allUsers = new ArrayList<>();
-    private static int nrUser = 0;
+    private static int nrUser = 1;
     private int userId;
     private String firstName;
     private String lastName;
