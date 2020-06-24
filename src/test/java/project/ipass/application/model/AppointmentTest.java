@@ -4,9 +4,9 @@ import org.junit.Test;
 
 
 public class AppointmentTest {
-
-    @Test
-    public void testCheckAppoiment(){
-    }
+//
+//    @Test
+//    public void testCheckAppoiment(){
+//    }
 
 }
