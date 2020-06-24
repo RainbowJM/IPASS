@@ -43,27 +43,26 @@ public class MyServletContextListener implements ServletContextListener {
         Date a = new Date();
         new Appointment(a, 13,s1, c1, w1);
 
-        try {
-            PersistenceManager.loadApplicationFromAzure();
-            System.out.println("Calendar loaded!");
-        } catch (IOException e) {
-            System.out.println("Cannot load calendar!");
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+//        try {
+//            PersistenceManager.loadApplicationFromAzure();
+//            System.out.println("Calendar loaded!");
+//        } catch (IOException e) {
+//            System.out.println("Cannot load calendar!");
+//            e.printStackTrace();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
         System.out.println("terminating application");
 
-        try {
-            PersistenceManager.saveApplicationToAzure();
-            System.out.println("Calendar saved!");
-        } catch (IOException e) {
-            System.out.println("Failed to save the calendar");
-            e.printStackTrace();
-        }
+//        try {
+//            PersistenceManager.saveApplicationToAzure();
+//            System.out.println("Calendar saved!");
+//        } catch (IOException e) {
+//            System.out.println("Failed to save the calendar");
+//            e.printStackTrace();
+//        }
     }
 }
