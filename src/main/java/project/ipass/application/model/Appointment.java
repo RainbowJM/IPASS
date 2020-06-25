@@ -5,7 +5,7 @@ import java.util.*;
 public class Appointment{
     private static List<Appointment> allAppointments = new ArrayList<>();
     private int appointmentId;
-    private static int lastAppointmentId = 0;
+    private static int lastAppointmentId = 1;
     private Date date;
     private int hour;
     private Service service;
