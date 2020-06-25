@@ -16,19 +16,20 @@ public final class Worker extends User {
             allWorker.add(this);
         }
     }
-
+    //getters
     public static List<Worker> getWorkers(){
         return Collections.unmodifiableList(allWorker);
     }
     public List<Appointment> getAppointments() {
         return appointments;
     }
+    public Availability getAvailability() {
+        return availability;
+    }
 
+    // setters
     public void setAvailability(Availability availability) {
         this.availability = availability;
     }
 
-    public Availability getAvailability() {
-        return availability;
-    }
 }

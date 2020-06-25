@@ -1,8 +1,12 @@
 package project.ipass.application.model;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 public class Availability {
+    private static List<Availability> allAvailability = new ArrayList<>();
     private Date from;
     private Date till;
     private String description;
@@ -17,7 +21,10 @@ public class Availability {
         this.till = till;
         this.description = description;
     }
-
+    //getters
+    public static List<Availability> getAllAvailability(){
+        return Collections.unmodifiableList(allAvailability);
+    }
     public Date getFrom() {
         return from;
     }
