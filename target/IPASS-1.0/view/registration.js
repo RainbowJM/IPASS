@@ -1,16 +1,22 @@
 // get element
-let firstNameElement = document.getElementById("first-name").value;
-let lastNameElement = document.getElementById("last-name").value;
-let usrElement = document.getElementById("username").value;
-let pswElement = document.getElementById("password").value;
+// let firstNameElement = document.getElementById("first-name").value;
+// let lastNameElement = document.getElementById("last-name").value;
+// let usrElement = document.getElementById("username").value;
+// let pswElement = document.getElementById("password").value;
 
 const SIGNUPBUTTON = document.getElementById('signup');
 
 // set listener
-SIGNUPBUTTON.addEventListener("click", signup);
+SIGNUPBUTTON.addEventListener("click", register);
 
 function register(){
+    let firstNameElement = document.getElementById("first-name").value;
+    let lastNameElement = document.getElementById("last-name").value;
+    let usrElement = document.getElementById("username").value;
+    let pswElement = document.getElementById("password").value;
+    console.log("info" + firstNameElement + lastNameElement + usrElement + pswElement);
     if (firstNameElement.trim() === "" || lastNameElement.trim() === "" || usrElement.trim() === "" || pswElement.trim() === ""){
+        console.log("infom" + firstNameElement + lastNameElement + usrElement + pswElement);
         alert("Please enter your informations")
         return false;
     }else{

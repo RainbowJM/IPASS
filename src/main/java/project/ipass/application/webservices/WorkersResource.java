@@ -17,6 +17,6 @@ public class WorkersResource {
     @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
     public List<Worker> getAllworker(){
-        return Calendar.getallWorkers();
+        return Calendar.getAllWorkers();
     }
 }

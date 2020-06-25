@@ -17,10 +17,10 @@ public class Calendar implements Serializable {
     public static List<User> getAllUsers(){
         return Collections.unmodifiableList(User.getAllUsers());
     }
-    public static List<Worker> getallWorkers(){
+    public static List<Worker> getAllWorkers(){
         return Collections.unmodifiableList(Worker.getWorkers());
     }
-
+    public static List<Client> getAllClients(){ return Collections.unmodifiableList(Client.getClients());}
     // setters
     public static void setTheCalendar(Calendar calendar){
         theCalendar = calendar;

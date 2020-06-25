@@ -47,6 +47,7 @@ function register(){
         })
         .then(function(myJson){
            console.log(myJson);
+           window.location = "calendar.html";
         })
         .catch(error => console.log(error));
         return true;
