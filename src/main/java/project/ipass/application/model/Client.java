@@ -10,9 +10,6 @@ public final class Client extends User {
         super(firstName, lastName, username, password);
     }
 
-//    public static Client createClient(int userId, String firstName, String lastName, String username, String password){
-//
-//    }
     // getters
     public List<Appointment> getAppointments() {
         return appointments;

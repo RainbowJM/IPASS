@@ -39,7 +39,7 @@ public class MyServletContextListener implements ServletContextListener {
 
         //appointment
         Date a = new Date();
-        new Appointment(a, 13,s1, c1, w1);
+        new Appointment(a, 13,s1, c1 , w1);
 
         try {
             PersistenceManager.loadApplicationFromAzure();
