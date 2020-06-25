@@ -26,4 +26,13 @@ public class UserResource {
         }
         return Response.ok(new User(fname,lname, username, pwd)).build();
     }
+
+    @DELETE
+    @Path("{userId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteUser(@PathParam("userId") int id){
+        return User.removeUser(id)
+                ? Response.ok().build()
+                : Response.status(Response.Status.NOT_FOUND).build();
+    }
 }

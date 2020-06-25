@@ -38,6 +38,15 @@ public class User implements Principal {
         return null;
     }
 
+    public static boolean removeUser(int id){
+        for (User user : allUsers){
+            if (user.getUserId() == id){
+                return  allUsers.remove(user);
+            }
+        }
+        return false;
+    }
+
     // getters
     public static User getUser(int userId){
         return allUsers.stream()
