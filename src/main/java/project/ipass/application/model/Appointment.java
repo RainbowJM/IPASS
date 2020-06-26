@@ -12,12 +12,11 @@ public class Appointment{
     private Worker worker;
     private Client client;
 
-    public Appointment(Date date, int hour, Service service, Client client, Worker worker){
+    public Appointment(Date date, int hour, Service service, Worker worker){
         appointmentId = lastAppointmentId++;
         this.date = date;
         this.hour = hour;
         this.service = service;
-        this.client = client;
         this.worker = worker;
 
         if (!allAppointments.contains(this)){

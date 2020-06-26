@@ -22,7 +22,7 @@ public class UserResource {
             if (user.getFirstName().equals(fname)){
                 return Response
                         .status(Response.Status.CONFLICT)
-                        .entity(new AbstractMap.SimpleEntry<String, String>("error", "User already exists"))
+                        .entity(new AbstractMap.SimpleEntry<String, String>("Error", "User already exists"))
                         .build();
             }
         }

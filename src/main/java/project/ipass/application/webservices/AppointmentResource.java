@@ -6,23 +6,36 @@ import javax.annotation.security.PermitAll;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.AbstractMap;
 import java.util.Date;
 
 @Path("/appointment")
 public class AppointmentResource {
-//
+
 //    @POST
 //    @PermitAll
 //    @Produces(MediaType.APPLICATION_JSON)
 //    public Response createAppointment(@FormParam("day") Date date,
 //                                      @FormParam("hour") int time,
-//                                      @FormParam("serviceId") int serviceId,
-//                                      @FormParam("clientId") int clientId,
+//                                      @FormParam("serviceId") Service service,
 //                                      @FormParam("workerId") int workerId){
-//
-//        for (Appointment appoint : Calendar.getAllAppointments()){
-//            if
+//        for (Service serv : Calendar.getAllServices()){
+//            if (service.equals(serv.getService())){
+//                String servName = serv.getServiceName();
+//            }
 //        }
+//        for (Appointment appoint : Calendar.getAllAppointments()){
+//            if (appoint.getDate().equals(date)){
+//                if (appoint.getHour() == time){
+//                    return Response
+//                            .status(Response.Status.CONFLICT)
+//                            .entity(new AbstractMap.SimpleEntry<String, String>("Error", "Can't make a appointment at this time"))
+//                            .build();
+//                }
+//
+//            }
+//        }
+//        return Response.ok(new Appointment(date, time, service, workerId));
 //    }
 
     @DELETE

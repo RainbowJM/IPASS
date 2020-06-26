@@ -22,6 +22,7 @@ public class Calendar implements Serializable {
     }
     public static List<Client> getAllClients(){ return Collections.unmodifiableList(Client.getClients());}
     public static List<Availability> getAllAvailibalities(){return  Collections.unmodifiableList(Availability.getAllAvailability());}
+    public static List<Service> getAllServices(){return  Collections.unmodifiableList(Service.getAllServices());}
     // setters
     public static void setTheCalendar(Calendar calendar){
         theCalendar = calendar;
