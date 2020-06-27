@@ -1,9 +1,3 @@
-// get element
-// let firstNameElement = document.getElementById("first-name").value;
-// let lastNameElement = document.getElementById("last-name").value;
-// let usrElement = document.getElementById("username").value;
-// let pswElement = document.getElementById("password").value;
-
 const SIGNUPBUTTON = document.getElementById('signup');
 
 // set listener

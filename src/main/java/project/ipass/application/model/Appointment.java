@@ -1,16 +1,20 @@
 package project.ipass.application.model;
 
+import project.ipass.App;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Appointment{
     private static List<Appointment> allAppointments = new ArrayList<>();
     private int appointmentId;
-    private static int lastAppointmentId = 1;
+    private static int lastAppointmentId = 0;
     private Date date;
     private int hour;
     private Service service;
     private Worker worker;
-    private Client client;
+//    private Client client;
 
     public Appointment(Date date, int hour, Service service, Worker worker){
         appointmentId = lastAppointmentId++;
@@ -22,7 +26,6 @@ public class Appointment{
         if (!allAppointments.contains(this)){
             allAppointments.add(this);
         }
-        allAppointments.add(this);
     }
 
     @Override
@@ -40,19 +43,37 @@ public class Appointment{
         return Objects.hash(date, hour, worker);
     }
 
-    public static  boolean removeAppointment(int id){
-        for (Appointment appoint : allAppointments){
-            if (appoint.getAppointmentId() == id){
-                return allAppointments.remove(appoint);
-            }
+//    public static  boolean removeAppointment(int id){
+//        for (Appointment appoint : allAppointments){
+//            if (appoint.getAppointmentId() == id){
+//                return allAppointments.remove(appoint);
+//            }
+//        }
+//        return false;
+//    }
+
+    public static boolean removeAppointment(int id){
+        if (id>0){
+            return allAppointments.remove(allAppointments.indexOf(Appointment.getAppointment(id))) != null;
         }
         return false;
     }
 
-
+    public static Date parseDate(String date) {
+        try {
+            return new SimpleDateFormat("dd/MM/yyyy").parse(date);
+        } catch (ParseException e) {
+            return null;
+        }
+    }
     // getters
+
     public static List<Appointment> getAllAppointments(){
         return Collections.unmodifiableList(allAppointments);
+    }
+
+    public static Appointment getAppointment(int id){
+        return allAppointments.stream().filter(e -> e.appointmentId == id).findFirst().orElse(null);
     }
 
     public Date getDate() {
@@ -67,9 +88,9 @@ public class Appointment{
         return appointmentId;
     }
 
-    public Client getClient() {
-        return client;
-    }
+//    public Client getClient() {
+//        return client;
+//    }
 
     public Service getService() {
         return service;
@@ -84,9 +105,9 @@ public class Appointment{
         this.appointmentId = appointmentId;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
-    }
+//    public void setClient(Client client) {
+//        this.client = client;
+//    }
 
     public void setService(Service service) {
         this.service = service;

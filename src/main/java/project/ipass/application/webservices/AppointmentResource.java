@@ -12,18 +12,15 @@ import java.util.Date;
 @Path("/appointment")
 public class AppointmentResource {
 
-//    @POST
-//    @PermitAll
-//    @Produces(MediaType.APPLICATION_JSON)
-//    public Response createAppointment(@FormParam("day") Date date,
-//                                      @FormParam("hour") int time,
-//                                      @FormParam("serviceId") Service service,
-//                                      @FormParam("workerId") int workerId){
-//        for (Service serv : Calendar.getAllServices()){
-//            if (service.equals(serv.getService())){
-//                String servName = serv.getServiceName();
-//            }
-//        }
+    @POST
+    @PermitAll
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response createAppointment(@FormParam("day") Date date,
+                                      @FormParam("hour") int time,
+                                      @FormParam("serviceId") int serviceId,
+                                      @FormParam("workerId") int workerId){
+        Service s = Service.getService(serviceId);
+        Worker w = Worker.getWorker(workerId);
 //        for (Appointment appoint : Calendar.getAllAppointments()){
 //            if (appoint.getDate().equals(date)){
 //                if (appoint.getHour() == time){
@@ -32,11 +29,11 @@ public class AppointmentResource {
 //                            .entity(new AbstractMap.SimpleEntry<String, String>("Error", "Can't make a appointment at this time"))
 //                            .build();
 //                }
-//
+
 //            }
 //        }
-//        return Response.ok(new Appointment(date, time, service, workerId));
-//    }
+        return Response.ok(new Appointment(date, time, s, w)).build();
+    }
 
     @DELETE
     @PermitAll

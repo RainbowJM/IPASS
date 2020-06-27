@@ -40,13 +40,13 @@ body{
 }
 
 .wrapper .form .input-field{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
 }
 
 .wrapper .form .input-field label{
-    width: 150px;
+    width: 125px;
     color: #585757;
     margin-right: 10px;
     font-size: 1.2em;

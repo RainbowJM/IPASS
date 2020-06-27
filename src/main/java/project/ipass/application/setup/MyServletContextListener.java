@@ -18,6 +18,7 @@ public class MyServletContextListener implements ServletContextListener {
 
         Worker w1 = new Worker("Jevona", "Magdalena", "jmag@hotmail.com", "test");
         w1.setAdmin();
+        Worker w2 = new Worker("Elisa", "Copra", "ecopra@hotmail.com", "123");
 
         Client c1 = new Client("Isobel", "Hook", "Iso@hotmail.com","test3");
         Client c2 = new Client("Tymon", "Bird", "ty@hotmail.com","test2");
@@ -35,7 +36,7 @@ public class MyServletContextListener implements ServletContextListener {
         Service s9 = new Service(9,"Medium Braids",3);
         Service s10 = new Service(10,"Small Braids",4);
         Service s11 = new Service(11,"Flat Twist",3);
-        Service s12 = new Service(12,"Vacation", 8);
+//        Service s12 = new Service(12,"Vacation", 8);
 
         //appointment
         Date a = new Date();

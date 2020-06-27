@@ -17,6 +17,9 @@ public final class Worker extends User {
         }
     }
     //getters
+    public static  Worker getWorker(int id){
+        return allWorker.stream().filter(e -> e.getUserId() == id).findFirst().orElse(null);
+    }
     public static List<Worker> getWorkers(){
         return Collections.unmodifiableList(allWorker);
     }

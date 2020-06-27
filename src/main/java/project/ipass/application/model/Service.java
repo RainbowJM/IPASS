@@ -25,6 +25,9 @@ public class Service {
         this.serviceName = serviceName;
     }
     // getters
+    public static Service getService(int id){
+        return allServices.stream().filter(e -> e.serviceId == id).findFirst().orElse(null);
+    }
     public static List<Service> getAllServices(){
         return Collections.unmodifiableList(Service.getAllServices());
     }
