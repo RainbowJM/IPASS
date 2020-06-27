@@ -40,7 +40,7 @@ public class AppointmentResource {
 
     @DELETE
     @PermitAll
-    @Path("deleteAppointment/{appointmentid}")
+    @Path("{appointmentid}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteAppointment(@PathParam("appointmentid") int id){
         return Appointment.removeAppointment(id)

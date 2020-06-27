@@ -12,14 +12,13 @@ import java.util.AbstractMap;
 public class UserResource {
 
     @POST
-    @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
     public Response createUser(@FormParam("firstName")String fname,
                                @FormParam("lastName") String lname,
                                @FormParam("username") String username,
                                @FormParam("password") String pwd ){
         for (User user : User.getAllUsers()){
-            if (user.getFirstName().equals(fname)){
+            if (user.getFirstName().equals(fname) && user.getLastName().equals(lname)){
                 return Response
                         .status(Response.Status.CONFLICT)
                         .entity(new AbstractMap.SimpleEntry<String, String>("Error", "User already exists"))
