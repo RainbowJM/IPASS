@@ -15,24 +15,25 @@ public class AppointmentResource {
     @POST
     @PermitAll
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createAppointment(@FormParam("day") Date date,
+    public Response createAppointment(@FormParam("day") String date,
                                       @FormParam("hour") int time,
                                       @FormParam("serviceId") int serviceId,
                                       @FormParam("workerId") int workerId){
         Service s = Service.getService(serviceId);
         Worker w = Worker.getWorker(workerId);
-//        for (Appointment appoint : Calendar.getAllAppointments()){
-//            if (appoint.getDate().equals(date)){
-//                if (appoint.getHour() == time){
-//                    return Response
-//                            .status(Response.Status.CONFLICT)
-//                            .entity(new AbstractMap.SimpleEntry<String, String>("Error", "Can't make a appointment at this time"))
-//                            .build();
-//                }
+        Date d = Appointment.parseDate(date);
+        for (Appointment appoint : Calendar.getAllAppointments()){
+            if (appoint.getDate().equals(d)){
+                if (appoint.getHour() == time){
+                    return Response
+                            .status(Response.Status.CONFLICT)
+                            .entity(new AbstractMap.SimpleEntry<String, String>("Error", "Can't make a appointment at this time"))
+                            .build();
+                }
 
-//            }
-//        }
-        return Response.ok(new Appointment(date, time, s, w)).build();
+            }
+        }
+        return Response.ok(new Appointment(d, time, s, w)).build();
     }
 
     @DELETE

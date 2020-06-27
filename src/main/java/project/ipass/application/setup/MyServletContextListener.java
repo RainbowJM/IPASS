@@ -39,7 +39,7 @@ public class MyServletContextListener implements ServletContextListener {
 //        Service s12 = new Service(12,"Vacation", 8);
 
         //appointment
-        Date a = new Date();
+        Date a = Appointment.parseDate("24/5/2020");
         new Appointment(a, 13,s1, w1);
 
         try {

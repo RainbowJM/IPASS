@@ -43,15 +43,6 @@ public class Appointment{
         return Objects.hash(date, hour, worker);
     }
 
-//    public static  boolean removeAppointment(int id){
-//        for (Appointment appoint : allAppointments){
-//            if (appoint.getAppointmentId() == id){
-//                return allAppointments.remove(appoint);
-//            }
-//        }
-//        return false;
-//    }
-
     public static boolean removeAppointment(int id){
         if (id>0){
             return allAppointments.remove(allAppointments.indexOf(Appointment.getAppointment(id))) != null;
