@@ -21,8 +21,7 @@
                         <button id="add-appointment" class="navigation-button">Add Appointment</button>
                     </li>
                     <li>
-                        <a href="#" class="text">
-                            Delete Appointment</a>
+                        <a href="delete.html" class="text">Delete Appointment</a>
                     </li>
                     <li>
                         <a href="homepage.html" class="text" onclick=signout()>Sign Out</a>
@@ -66,14 +65,14 @@
                 </section>
                 <section id="appointmentWorker" class="modal-section">
                     <label for="selectedWorker">Worker:</label>
-                    <select name="workers" id="workers">
+                    <select name="workers" id="selectedWorker">
                         <option value="w1">Jevona</option>
                         <option value="w2">Elisa</option>
                     </select>
                 </section>
                 <section id="appointmentService" class="modal-section">
                     <label for="selctedService">Service:</label>
-                    <select>
+                    <select id="selctedService">
                         <option value="s1">Small Boxbraid</option>
                         <option value="s2">Medium Boxbraid</option>
                         <option value="s3">Large Boxbraid</option>

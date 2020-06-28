@@ -42,6 +42,9 @@ public class MyServletContextListener implements ServletContextListener {
         Date a = Appointment.parseDate("24/5/2020");
         new Appointment(a, 13,s1, w1);
 
+        Date b = Appointment.parseDate("28/6/2020");
+        new Appointment(b,10, s3, w1);
+
         try {
             PersistenceManager.loadApplicationFromAzure();
             System.out.println("Calendar loaded!");
