@@ -49,6 +49,3 @@ function signin(event){
     }
 }
 
-function signout(){
-    localStorage.removeItem("username");
-}

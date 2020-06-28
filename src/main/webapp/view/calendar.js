@@ -115,6 +115,11 @@ function clickOutside(e){
         MODAL.style.display = "none";
     }
 }
+
+function signout(){
+    localStorage.removeItem("username");
+    window.location = "homepage.html"
+}
 // function openModal(modal) {
 //     if (modal == null) return
 
