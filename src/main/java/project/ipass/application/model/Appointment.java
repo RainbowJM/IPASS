@@ -17,7 +17,7 @@ public class Appointment{
 //    private Client client;
 
     public Appointment(Date date, int hour, Service service, Worker worker){
-        appointmentId = lastAppointmentId++;
+        appointmentId = ++lastAppointmentId;
         this.date = date;
         this.hour = hour;
         this.service = service;
@@ -78,10 +78,6 @@ public class Appointment{
     public int getAppointmentId() {
         return appointmentId;
     }
-
-//    public Client getClient() {
-//        return client;
-//    }
 
     public Service getService() {
         return service;

@@ -11,12 +11,12 @@ public class Availability {
     private Date till;
     private String description;
 
-    public Availability(int userId, Date from, Date till){
+    public Availability(Date from, Date till){
         this.from = from;
         this.till = till;
     }
 
-    public Availability(int userId, Date from, Date till, String description){
+    public Availability(Date from, Date till, String description){
         this.from = from;
         this.till = till;
         this.description = description;
