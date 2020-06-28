@@ -23,6 +23,7 @@ public class AppointmentResource {
         Worker w = Worker.getWorker(workerId);
         Date d = Appointment.parseDate(date);
         for (Appointment appoint : Calendar.getAllAppointments()){
+            System.out.println("hello" + appoint.getDate());
             if (appoint.getDate().equals(d)){
                 if (appoint.getHour() == time){
                     return Response

@@ -50,6 +50,7 @@ public class Appointment{
         return false;
     }
 
+
     public static Date parseDate(String date) {
         try {
             return new SimpleDateFormat("dd/MM/yyyy").parse(date);
