@@ -17,7 +17,7 @@ import java.util.Date;
 public class AvailabityResource {
 
     @POST
-    @RolesAllowed("admin")
+//    @RolesAllowed("admin")
     @Produces(MediaType.APPLICATION_JSON)
     public Response createAvailabity(@FormParam("from")String dateF,
                                      @FormParam("till")String dateT,
@@ -25,7 +25,7 @@ public class AvailabityResource {
         Date df = Appointment.parseDate(dateF);
         Date dt = Appointment.parseDate(dateT);
         for (Availability avai : Availability.getAllAvailability()){
-            if (avai.getFrom().equals(dateF) && avai.getTill().equals(dateT)){
+            if (avai.getFrom().equals(df) && avai.getTill().equals(dt)){
                 return Response
                         .status(Response.Status.CONFLICT)
                         .entity(new AbstractMap.SimpleEntry<String, String>("Error", "The time period is already booked"))
