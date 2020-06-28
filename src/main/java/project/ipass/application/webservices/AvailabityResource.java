@@ -3,6 +3,7 @@ package project.ipass.application.webservices;
 import project.ipass.application.model.Appointment;
 import project.ipass.application.model.Availability;
 
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -16,6 +17,7 @@ import java.util.Date;
 public class AvailabityResource {
 
     @POST
+    @RolesAllowed("admin")
     @Produces(MediaType.APPLICATION_JSON)
     public Response createAvailabity(@FormParam("from")String dateF,
                                      @FormParam("till")String dateT,

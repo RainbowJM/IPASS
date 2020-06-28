@@ -19,6 +19,7 @@ public class MyServletContextListener implements ServletContextListener {
         Worker w1 = new Worker("Jevona", "Magdalena", "jmag@hotmail.com", "test");
         w1.setAdmin();
         Worker w2 = new Worker("Elisa", "Copra", "ecopra@hotmail.com", "123");
+        w2.setAdmin();
 
         Client c1 = new Client("Isobel", "Hook", "Iso@hotmail.com","test3");
         Client c2 = new Client("Tymon", "Bird", "ty@hotmail.com","test2");
